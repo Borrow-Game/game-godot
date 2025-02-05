@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
-
+@export var SPEED = 100.0
+@export var JUMP_VELOCITY = -240.0 /1.5
+var x_acceleration = 40
 
 func _physics_process(delta: float) -> void:
 
@@ -17,8 +17,8 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = move_toward(velocity.x, direction * SPEED, x_acceleration / 2)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x , 0, x_acceleration)
 
 	move_and_slide()
