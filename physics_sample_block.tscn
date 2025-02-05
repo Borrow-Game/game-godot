@@ -6,6 +6,7 @@ size = Vector2(32, 32)
 [sub_resource type="QuadMesh" id="QuadMesh_xjw7s"]
 
 [node name="sample_block" type="StaticBody2D"]
+collision_layer = 3
 
 [node name="sample_block_hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mowld")
