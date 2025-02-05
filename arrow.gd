@@ -11,5 +11,5 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity = Vector2.from_angle(deg_to_rad(angle))  * 10
 	move_and_collide(velocity)
-	angle += 1
+	angle += 1  * 60 * delta
 	

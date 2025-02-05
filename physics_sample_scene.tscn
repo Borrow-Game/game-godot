@@ -14,6 +14,51 @@ position = Vector2(48, 128)
 [node name="sample_block3" parent="." instance=ExtResource("1_gdt6k")]
 position = Vector2(80, 128)
 
+[node name="sample_block4" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(16, 160)
+
+[node name="sample_block5" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(48, 160)
+
+[node name="sample_block6" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(80, 160)
+
+[node name="sample_block7" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(112, 160)
+
+[node name="sample_block8" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(144, 160)
+
+[node name="sample_block9" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(176, 160)
+
+[node name="sample_block10" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(208, 160)
+
+[node name="sample_block11" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(240, 160)
+
+[node name="sample_block12" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(272, 160)
+
+[node name="sample_block13" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(304, 160)
+
+[node name="sample_block14" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(304, 128)
+
+[node name="sample_block15" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(304, 96)
+
+[node name="sample_block16" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(304, 64)
+
+[node name="sample_block17" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(304, 32)
+
+[node name="sample_block18" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(-16, 128)
+
 [node name="player_character" parent="." instance=ExtResource("2_ycyjp")]
 
 [node name="arrows" type="Node2D" parent="."]

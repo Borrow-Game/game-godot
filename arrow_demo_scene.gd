@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_end"):
+	if Input.is_action_just_pressed("shoot bow"):
 		var new_arrow = arrow_scene.instantiate()
 		new_arrow.angle = aim_angle
 		new_arrow.position = Vector2(0, 96)
