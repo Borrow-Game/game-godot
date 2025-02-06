@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhdknu3qv53tn"]
+
+[ext_resource type="PackedScene" uid="uid://de3gxee2bnp55" path="res://arrow.tscn" id="1_avj72"]
+[ext_resource type="Script" path="res://arrow_demo_scene.gd" id="1_s362a"]
+[ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://physics_sample_block.tscn" id="2_ycyrf"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_s362a")
+
+[node name="arrow" parent="." instance=ExtResource("1_avj72")]
+position = Vector2(0, 96)
+angle = -20
+
+[node name="sample_block" parent="." instance=ExtResource("2_ycyrf")]
+position = Vector2(240, 88)
+
+[node name="sample_block2" parent="." instance=ExtResource("2_ycyrf")]
+position = Vector2(240, 56)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://de3gxee2bnp55"]
+
+[ext_resource type="Script" path="res://arrow.gd" id="1_3huta"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gesu5"]
+radius = 4.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_3pfjx"]
+radius = 0.25
+height = 0.5
+radial_segments = 32
+
+[node name="arrow" type="CharacterBody2D" groups=["arrow"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_3huta")
+
+[node name="arrow_collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gesu5")
+
+[node name="arrow_texture_shape" type="MeshInstance2D" parent="."]
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(16.0181, 16)
+mesh = SubResource("SphereMesh_3pfjx")
