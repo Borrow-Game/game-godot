@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://qmyh4mqlderv"]
+
+[ext_resource type="Script" path="res://target_linking_demo_block.gd" id="1_rj87r"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_kunk0"]
+
+[node name="target_linking_demo_block" type="MeshInstance2D"]
+mesh = SubResource("QuadMesh_kunk0")
+script = ExtResource("1_rj87r")
