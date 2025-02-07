@@ -23,4 +23,13 @@ func _physics_process(delta: float) -> void:
 			self.position = aim_position
 			task = "idle"
 		
+
+
+func reset() -> void: # gets triggerd if respawn
+	self.global_position = start_position
+	task = "idle" #idle: nothing to move, moving_to: moving to aim_position
+	deltas_count = 0 #used to determine when th time has passed
 	
+func _process(delta: float) -> void:
+	if RespawnHandler.respawning > 0:
+		reset()
