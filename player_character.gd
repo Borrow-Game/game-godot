@@ -28,7 +28,6 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("shoot bow"):
 		aim_angle = move_toward(aim_angle, 90, -2  * 60 * delta)
-		print(aim_angle)
 		$"indication-center".visible = true
 	if Input.is_action_just_released("shoot bow"):
 		if self.get_parent().get_node("arrows").get_child(0):
