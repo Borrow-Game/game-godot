@@ -74,9 +74,10 @@ triggered_note = NodePath("../target_linking_demo_block")
 position = Vector2(215.75, 104.25)
 scale = Vector2(16.5, 16.5)
 
-[node name="moving_block" parent="." instance=ExtResource("5_b1fxg")]
-aim_position = Vector2(192, 64)
-
 [node name="target_block2" parent="." node_paths=PackedStringArray("triggered_note") instance=ExtResource("3_22fh5")]
 position = Vector2(240, 16)
 triggered_note = NodePath("../moving_block")
+
+[node name="moving_block" parent="." instance=ExtResource("5_b1fxg")]
+position = Vector2(152, 88)
+aim_position = Vector2(96, 96)
