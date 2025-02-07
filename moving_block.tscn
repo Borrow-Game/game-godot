@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ylta7hm7dobh"]
+
+[ext_resource type="Script" path="res://moving_block.gd" id="1_2ou52"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh6jp"]
+size = Vector2(16, 16)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lte0d"]
+
+[node name="moving_block" type="StaticBody2D"]
+position = Vector2(120, 88)
+script = ExtResource("1_2ou52")
+aim_position = Vector2(64, 64)
+move_time = 0.25
+
+[node name="moving_block_hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vh6jp")
+
+[node name="moving_block_texture" type="MeshInstance2D" parent="."]
+modulate = Color(0.482353, 0.458824, 0.466667, 1)
+scale = Vector2(16, 16)
+mesh = SubResource("QuadMesh_lte0d")
