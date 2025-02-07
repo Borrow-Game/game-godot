@@ -8,7 +8,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if RespawnHandler.respawning > 0:
+		reset()
 	pass
 
 func trigger() -> void:
 	self.modulate = Color("red")
+
+func reset() -> void:
+	self.modulate = Color8(255, 255, 255, 255)
