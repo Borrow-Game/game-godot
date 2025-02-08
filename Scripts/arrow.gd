@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var angle = 1
+@export var angle = -1
 
 @export var active = true
 var speed = 1
@@ -15,10 +15,12 @@ func _physics_process(delta: float) -> void:
 	if active:
 		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10
 		move_and_collide(velocity)
-		if angle < 90:
+		if angle < 90 - speed  * 60 * delta:
 		
 			angle += speed  * 60 * delta
-	
+		else:
+			angle = 90
+		
 		if RespawnHandler.respawning > 0:
 			reset()
 	self.rotation = deg_to_rad(angle)
