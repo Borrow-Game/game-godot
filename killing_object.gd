@@ -1,4 +1,5 @@
 extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
-	RespawnHandler.respawn()
+	if body.is_in_group("player"):
+		RespawnHandler.respawn()

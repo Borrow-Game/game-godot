@@ -33,6 +33,7 @@ project/assembly_name="BorrowGame"
 
 arrow="group for all player shot projectiles"
 player=""
+wall=""
 
 [input]
 

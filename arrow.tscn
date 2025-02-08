@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://arrow.gd" id="1_3huta"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gesu5"]
-radius = 4.0
+radius = 5.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_3pfjx"]
 radius = 0.25
@@ -22,3 +22,11 @@ shape = SubResource("CircleShape2D_gesu5")
 position = Vector2(0, 1.90735e-06)
 scale = Vector2(16.0181, 16)
 mesh = SubResource("SphereMesh_3pfjx")
+
+[node name="Area2D" type="Area2D" parent="." groups=["arrow"]]
+
+[node name="arrow_collision" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gesu5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
