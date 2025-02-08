@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var arrow_scene = preload("res://arrow.tscn")
 var aim_angle: float = 0
-
+@onready var startpoint = self.position
 
 @export var SPEED = 100.0
 @export var JUMP_VELOCITY = -240.0 /1.5
@@ -38,7 +38,10 @@ func _physics_process(delta: float) -> void:
 		
 	
 	$"indication-center".rotation_degrees=aim_angle
-		
+	
+	
+	if RespawnHandler.respawning > 0:
+		reset()
 
 func shoot(delta: float, angle: float) ->void:
 	var new_arrow = arrow_scene.instantiate()
@@ -46,6 +49,7 @@ func shoot(delta: float, angle: float) ->void:
 	new_arrow.position = self.global_position
 	self.get_parent().get_node("arrows").add_child(new_arrow)
 
+	
+func reset() -> void: # gets triggerd if respawn
+	self.position = startpoint
 
-	
-	
