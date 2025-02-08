@@ -20,7 +20,6 @@ func _physics_process(delta: float) -> void:
 			var distance = Vector2(aim_position-start_position)
 			self.position += Vector2(delta/move_time * distance.x,delta/move_time * distance.y)
 			deltas_count += delta
-			print(distance)
 		else:
 			self.position = aim_position
 			task = "finished"
