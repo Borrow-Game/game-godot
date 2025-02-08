@@ -3,14 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://physics_sample_block.tscn" id="1_gdt6k"]
 [ext_resource type="PackedScene" uid="uid://dfj3ask0ne44o" path="res://player_character.tscn" id="2_ycyjp"]
 [ext_resource type="PackedScene" uid="uid://dcf28kdusjeiu" path="res://target_block.tscn" id="3_22fh5"]
-
-
+[ext_resource type="PackedScene" uid="uid://bn5nvsbru0mdw" path="res://killing-object.tscn" id="5_1y1rt"]
 [ext_resource type="PackedScene" uid="uid://ylta7hm7dobh" path="res://moving_block.tscn" id="5_b1fxg"]
 [ext_resource type="PackedScene" uid="uid://cti0hhlcss2tr" path="res://enemy2d.tscn" id="6_ifv4r"]
-
-[ext_resource type="PackedScene" uid="uid://bn5nvsbru0mdw" path="res://killing-object.tscn" id="5_1y1rt"]
-[ext_resource type="PackedScene" path="res://moving_block.tscn" id="5_b1fxg"]
-
 
 [node name="scene" type="Node2D"]
 
@@ -663,7 +658,7 @@ position = Vector2(1424, 48)
 [node name="sample_block167" parent="." instance=ExtResource("1_gdt6k")]
 position = Vector2(1392, 48)
 
-[node name="sample_block214" parent="."Input.start_joy_vibration(0, 0.8, 0.8, 0.2) instance=ExtResource("1_gdt6k")]
+[node name="sample_block214" parent="." instance=ExtResource("1_gdt6k")]
 position = Vector2(1648, 160)
 
 [node name="sample_block215" parent="." instance=ExtResource("1_gdt6k")]
@@ -701,10 +696,6 @@ triggered_note = NodePath("../moving_block3")
 position = Vector2(880, 32)
 scale = Vector2(4, 1)
 aim_position = Vector2(880, 88)
-
-
-[node name="StaticBody2D" parent="." instance=ExtResource("5_40fy4")]
-position = Vector2(368, 72)
 
 [node name="Node" type="Node" parent="."]
 
@@ -860,4 +851,3 @@ position = Vector2(920, 138)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_ifv4r")]
 position = Vector2(152, 136)
-
