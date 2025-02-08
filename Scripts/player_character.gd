@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var arrow_scene = preload("res://arrow.tscn")
+var arrow_scene = preload("res://Scenes/arrow.tscn")
 var aim_angle: float = 0
 
 @export var SPEED: float = 100.0

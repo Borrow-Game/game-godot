@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bn5nvsbru0mdw"]
 
-[ext_resource type="Script" path="res://killing_object.gd" id="1_lh7ts"]
+[ext_resource type="Script" path="res://Scripts/killing_object.gd" id="1_lh7ts"]
 
 [node name="StaticBody2D" type="Area2D"]
 script = ExtResource("1_lh7ts")

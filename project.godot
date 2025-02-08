@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="BorrowGame"
-run/main_scene="res://physics_sample_scene.tscn"
+run/main_scene="res://Scenes/physics_sample_scene.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Textures/icon.svg"
 
 [autoload]
 
-RespawnHandler="*res://respawn_handler.gd"
-WindowHandler="*res://window_handler.gd"
+RespawnHandler="*res://Scripts/Globals/respawn_handler.gd"
+WindowHandler="*res://Scripts/Globals/window_handler.gd"
 
 [display]
 
