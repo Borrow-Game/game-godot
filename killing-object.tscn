@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvjj21rorb3ks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bwgb"]
+size = Vector2(32, 32)
+
+[sub_resource type="QuadMesh" id="QuadMesh_cyoso"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1bwgb")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(32, 32)
+mesh = SubResource("QuadMesh_cyoso")
