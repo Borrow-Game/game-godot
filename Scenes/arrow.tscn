@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://de3gxee2bnp55"]
+[gd_scene load_steps=5 format=3 uid="uid://de3gxee2bnp55"]
 
 [ext_resource type="Script" path="res://Scripts/arrow.gd" id="1_tdbg5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gesu5"]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwtde"]
+size = Vector2(11, 1.8)
 
-[sub_resource type="SphereMesh" id="SphereMesh_3pfjx"]
-radius = 0.25
-height = 0.5
-radial_segments = 32
+[sub_resource type="QuadMesh" id="QuadMesh_3net3"]
+size = Vector2(0.7, 0.1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4h6kx"]
+size = Vector2(11.5, 2)
 
 [node name="arrow" type="CharacterBody2D" groups=["arrow"]]
 collision_layer = 2
@@ -16,17 +17,17 @@ collision_mask = 2
 script = ExtResource("1_tdbg5")
 
 [node name="arrow_collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_gesu5")
+shape = SubResource("RectangleShape2D_pwtde")
 
 [node name="arrow_texture_shape" type="MeshInstance2D" parent="."]
 position = Vector2(0, 1.90735e-06)
 scale = Vector2(16.0181, 16)
-mesh = SubResource("SphereMesh_3pfjx")
+mesh = SubResource("QuadMesh_3net3")
 
 [node name="Area2D" type="Area2D" parent="." groups=["arrow"]]
 
 [node name="arrow_collision" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_gesu5")
+shape = SubResource("RectangleShape2D_4h6kx")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
