@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 
 func shoot(delta: float, angle: float) -> void:
 	var new_arrow = arrow_scene.instantiate()
-	new_arrow.angle = angle
+	new_arrow.angle = angle + 1
 	new_arrow.position = self.global_position
 	self.get_parent().get_node("arrows").add_child(new_arrow)
 
