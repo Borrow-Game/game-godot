@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @onready var startposition = self.position
 @export  var goal_position = Vector2()
+@export var speed = 10
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("arrow"):
 		body.queue_free()
@@ -9,20 +11,23 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		RespawnHandler.respawn()
 		
-var speed = 10
+
 		
 func _physics_process(delta: float) -> void:
 
-	
+	if RespawnHandler.respawning > 0:
+		self.position = startposition
+		speed = abs(speed)
+		
 	
 	
 	velocity.x = speed
 	
 	if self.position.x >= goal_position.x :
-		speed  = -10
+		speed  = abs(speed) * -1
 		
 	
 	if self.position.x <=startposition.x :
-		speed  = 10
+		speed  = abs(speed)
 	move_and_slide()	
 		
