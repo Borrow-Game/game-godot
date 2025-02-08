@@ -60,9 +60,21 @@ position = Vector2(304, 64)
 position = Vector2(304, 32)
 
 [node name="sample_block18" parent="." instance=ExtResource("1_gdt6k")]
+position = Vector2(-16, 160)
+
+[node name="sample_block19" parent="." instance=ExtResource("1_gdt6k")]
 position = Vector2(-16, 128)
 
 [node name="player_character" parent="." instance=ExtResource("2_ycyjp")]
+
+[node name="Camera2D" type="Camera2D" parent="player_character"]
+position = Vector2(-2, 0)
+limit_left = -30
+limit_top = -300
+limit_right = 320
+limit_bottom = 175
+position_smoothing_enabled = true
+editor_draw_limits = true
 
 [node name="arrows" type="Node2D" parent="."]
 

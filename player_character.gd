@@ -85,6 +85,8 @@ func shoot(delta: float, angle: float) -> void:
 	new_arrow.angle = angle
 	new_arrow.position = self.global_position
 	self.get_parent().get_node("arrows").add_child(new_arrow)
+
 	
 func reset() -> void: # gets triggerd if respawn
 	self.position = startpoint
+
