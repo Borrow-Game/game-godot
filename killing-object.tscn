@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvjj21rorb3ks"]
+[gd_scene load_steps=2 format=3 uid="uid://bn5nvsbru0mdw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bwgb"]
-size = Vector2(32, 32)
+[ext_resource type="Script" path="res://killing_object.gd" id="1_lh7ts"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_cyoso"]
+[node name="StaticBody2D" type="Area2D"]
+script = ExtResource("1_lh7ts")
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2(1.14286, 1)
+polygon = PackedVector2Array(-7, 6, 0, -16, 7, 6)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1bwgb")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, 6, 0, -16, 8, 6)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-scale = Vector2(32, 32)
-mesh = SubResource("QuadMesh_cyoso")
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
