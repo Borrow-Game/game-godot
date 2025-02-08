@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var angle = 1
 
-var active = true
+@export var active = true
 var speed = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
