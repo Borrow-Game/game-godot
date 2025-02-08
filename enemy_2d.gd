@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export  var goal_position = Vector2()
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("arrow"):
+		body.queue_free()
 		queue_free()
 	if body.is_in_group("player"):
 		RespawnHandler.respawn()

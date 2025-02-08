@@ -7,7 +7,7 @@ size = Vector2(16, 16)
 
 [sub_resource type="QuadMesh" id="QuadMesh_lte0d"]
 
-[node name="moving_block" type="StaticBody2D"]
+[node name="moving_block" type="StaticBody2D" groups=["wall"]]
 script = ExtResource("1_2ou52")
 aim_position = Vector2(64, 64)
 move_time = 0.25
