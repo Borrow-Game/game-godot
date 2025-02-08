@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	# Check for dash input.
 	# (Make sure you have defined "dash" in your Input Map.)
 	if Input.is_action_just_pressed("dash") and dash_available:
+		Input.start_joy_vibration(0, 0.1, 0.1, 0.2)
 		var dash_direction = Vector2(
 			Input.get_action_strength("right") - Input.get_action_strength("left"),
 			Input.get_action_strength("down") - Input.get_action_strength("up")

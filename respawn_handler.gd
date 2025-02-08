@@ -4,6 +4,7 @@ var respawning = 0
 
 func respawn() -> void:
 	respawning = 2
+	Input.start_joy_vibration(0, 0.8, 0.8, 0.2)
 	
 func _process(delta: float) -> void:
 
