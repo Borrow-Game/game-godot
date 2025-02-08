@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://n8wv5nrlv2ub"]
+[gd_scene load_steps=7 format=3 uid="uid://n8wv5nrlv2ub"]
 
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://physics_sample_block.tscn" id="1_gdt6k"]
 [ext_resource type="PackedScene" uid="uid://dfj3ask0ne44o" path="res://player_character.tscn" id="2_ycyjp"]
 [ext_resource type="PackedScene" uid="uid://dcf28kdusjeiu" path="res://target_block.tscn" id="3_22fh5"]
 [ext_resource type="PackedScene" uid="uid://qmyh4mqlderv" path="res://target_linking_demo_block.tscn" id="4_tj1qj"]
 [ext_resource type="PackedScene" uid="uid://ylta7hm7dobh" path="res://moving_block.tscn" id="5_b1fxg"]
+[ext_resource type="PackedScene" uid="uid://cti0hhlcss2tr" path="res://enemy2d.tscn" id="6_ifv4r"]
 
 [node name="scene" type="Node2D"]
 
@@ -93,3 +94,6 @@ triggered_note = NodePath("../moving_block")
 [node name="moving_block" parent="." instance=ExtResource("5_b1fxg")]
 position = Vector2(152, 88)
 aim_position = Vector2(96, 96)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_ifv4r")]
+position = Vector2(152, 136)

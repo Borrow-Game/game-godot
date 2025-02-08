@@ -8,7 +8,7 @@ size = Vector2(16, 16)
 
 [sub_resource type="SphereMesh" id="SphereMesh_7k7et"]
 
-[node name="player_character" type="CharacterBody2D"]
+[node name="player_character" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_nvmt7")
 
 [node name="character_texture" type="Sprite2D" parent="."]
