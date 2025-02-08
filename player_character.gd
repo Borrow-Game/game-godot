@@ -89,4 +89,3 @@ func shoot(delta: float, angle: float) -> void:
 	
 func reset() -> void: # gets triggerd if respawn
 	self.position = startpoint
-
