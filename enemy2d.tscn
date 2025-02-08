@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cti0hhlcss2tr"]
+
+[ext_resource type="Texture2D" uid="uid://bs4bmruuqe0xm" path="res://icon.svg" id="1_6y2cx"]
+[ext_resource type="Script" path="res://enemy_2d.gd" id="1_k1yl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n288p"]
+size = Vector2(18.1107, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_siay1"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(104, 80)
+script = ExtResource("1_k1yl2")
+goal_position = Vector2(200, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.71, 1.40773)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.931763, 1)
+scale = Vector2(0.986353, 1)
+shape = SubResource("RectangleShape2D_n288p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.169836, 0.153265)
+texture = ExtResource("1_6y2cx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_siay1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
