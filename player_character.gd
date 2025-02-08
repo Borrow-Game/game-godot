@@ -7,6 +7,8 @@ var aim_angle: float = 0
 @export var JUMP_VELOCITY: float = -240.0 / 1.5
 var x_acceleration: float = 40
 
+@onready var startpoint = self.position
+
 # DASH VARIABLES
 @export var DASH_SPEED: float = 400.0
 @export var DASH_DURATION: float = 0.2
@@ -62,8 +64,7 @@ func _physics_process(delta: float) -> void:
 
 	# Bow aiming and shooting code (unchanged)
 	if Input.is_action_pressed("shoot bow"):
-		aim_angle = move_toward(aim_angle, 90, -2 * 60 * delta)
-		print(aim_angle)
+		aim_angle = move_toward(aim_angle, 90, -2  * 60 * delta)
 		$"indication-center".visible = true
 	if Input.is_action_just_released("shoot bow"):
 		if self.get_parent().get_node("arrows").get_child(0):
@@ -71,6 +72,11 @@ func _physics_process(delta: float) -> void:
 		shoot(delta, aim_angle)
 		aim_angle = 0
 		$"indication-center".visible = false
+	
+	$"indication-center".rotation_degrees=aim_angle
+	
+	if RespawnHandler.respawning > 0:
+		reset()
 
 	$"indication-center".rotation_degrees = aim_angle
 
@@ -79,3 +85,6 @@ func shoot(delta: float, angle: float) -> void:
 	new_arrow.angle = angle
 	new_arrow.position = self.global_position
 	self.get_parent().get_node("arrows").add_child(new_arrow)
+	
+func reset() -> void: # gets triggerd if respawn
+	self.position = startpoint

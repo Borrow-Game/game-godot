@@ -13,3 +13,8 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity)
 	angle += 1  * 60 * delta
 	
+	if RespawnHandler.respawning > 0:
+		reset()
+		
+func reset() -> void:
+	self.queue_free()
