@@ -9,8 +9,9 @@ var task = "idle" #idle: nothing to move, moving_to: moving to aim_position
 var deltas_count = 0 #used to determine when th time has passed
 
 func trigger() -> void:
-	task = "moving_to"
-	deltas_count = 0
+	if task == "idle":
+		task = "moving_to"
+		deltas_count = 0
 	
 func _physics_process(delta: float) -> void:
 	if task == "moving_to":
@@ -21,7 +22,7 @@ func _physics_process(delta: float) -> void:
 			print(distance)
 		else:
 			self.position = aim_position
-			task = "idle"
+			task = "finished"
 		
 
 
