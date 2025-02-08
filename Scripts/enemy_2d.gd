@@ -5,9 +5,10 @@ extends CharacterBody2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("arrow"):
-		body.queue_free()
-		Input.start_joy_vibration(0, 0.1, 0.1, 0.2)
-		queue_free()
+		if body.active:
+			body.queue_free()
+			Input.start_joy_vibration(0, 0.1, 0.1, 0.2)
+			queue_free()
 	if body.is_in_group("player"):
 		RespawnHandler.respawn()
 		
