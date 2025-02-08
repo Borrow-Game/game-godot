@@ -19,6 +19,7 @@ config/icon="res://Assets/Textures/icon.svg"
 
 RespawnHandler="*res://Scripts/Globals/respawn_handler.gd"
 WindowHandler="*res://Scripts/Globals/window_handler.gd"
+HapticsHandler="*res://Scripts/Globals/haptics_handler.gd"
 
 [display]
 

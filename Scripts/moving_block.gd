@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 			self.position = aim_position
 			task = "finished"
 			Input.start_joy_vibration(0, 0.6, 0.6, 0.2)
+			HapticsHandler.shake(0.2, 1)
 		
 
 
