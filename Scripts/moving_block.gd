@@ -16,6 +16,7 @@ func trigger() -> void:
 func _physics_process(delta: float) -> void:
 	if task == "moving_to":
 		if delta + deltas_count < move_time:
+			Input.start_joy_vibration(0, 0.1, 0.1, move_time)
 			var distance = Vector2(aim_position-start_position)
 			self.position += Vector2(delta/move_time * distance.x,delta/move_time * distance.y)
 			deltas_count += delta
@@ -23,6 +24,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			self.position = aim_position
 			task = "finished"
+			Input.start_joy_vibration(0, 0.6, 0.6, 0.2)
 		
 
 
