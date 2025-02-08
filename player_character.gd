@@ -45,3 +45,7 @@ func shoot(delta: float, angle: float) ->void:
 	new_arrow.angle = aim_angle
 	new_arrow.position = self.global_position
 	self.get_parent().get_node("arrows").add_child(new_arrow)
+
+
+	
+	
