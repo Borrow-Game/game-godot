@@ -35,6 +35,14 @@ func _physics_process(delta: float) -> void:
 			(Input.get_action_strength("right")) - (Input.get_action_strength("left")),
 			(Input.get_action_strength("down")) - (Input.get_action_strength("up"))
 		)
+		if dash_direction.x < 0:
+			dash_direction.x = -1
+		elif dash_direction.x > 0:
+			dash_direction.x = 1
+		if dash_direction.y < 0:
+			dash_direction.y = -1
+		elif dash_direction.y > 0:
+			dash_direction.y = 1
 		# If no directional input, default to the current horizontal facing.
 		if dash_direction == Vector2.ZERO:
 			dash_direction.x = sign(velocity.x) if velocity.x != 0 else 1
