@@ -85,6 +85,8 @@ func _physics_process(delta: float) -> void:
 		aim_angle = move_toward(aim_angle, -70, 2  * 60 * delta)
 		
 		$"indication-center".visible = true
+	else:
+		$"indication-center".visible = false
 	if Input.is_action_just_released("shoot bow"):
 		if self.get_parent().get_node("arrows").get_child(0):
 			self.get_parent().get_node("arrows").get_child(0).queue_free()
@@ -96,8 +98,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		$"indication-center".rotation_degrees=-179 - aim_angle
 	
+func _process(delta: float) -> void:
 	if RespawnHandler.respawning > 0:
 		reset()
+		
 
 
 func shoot(delta: float, angle: float) -> void:
@@ -113,3 +117,4 @@ func shoot(delta: float, angle: float) -> void:
 	
 func reset() -> void: # gets triggerd if respawn
 	self.position = startpoint
+	self.set_physics_process(true)
