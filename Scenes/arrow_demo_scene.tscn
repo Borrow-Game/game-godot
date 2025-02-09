@@ -8,8 +8,8 @@
 script = ExtResource("1_7dwqc")
 
 [node name="arrow" parent="." instance=ExtResource("2_l3yrd")]
-position = Vector2(0, 96)
-angle = -20
+position = Vector2(144, 80)
+angle = -160
 
 [node name="sample_block" parent="." instance=ExtResource("3_y6d01")]
 position = Vector2(240, 88)
