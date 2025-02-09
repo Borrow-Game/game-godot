@@ -13,7 +13,7 @@ config_version=5
 config/name="BorrowGame"
 run/main_scene="res://Scenes/physics_sample_scene.tscn"
 config/features=PackedStringArray("4.3")
-config/icon="res://Assets/Textures/icon.svg"
+config/icon="res://Scripts/Assets/Textures/icon.svg"
 
 [autoload]
 
