@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot bow"):
 		var new_arrow = arrow_scene.instantiate()
-		new_arrow.angle = aim_angle
+		new_arrow.angle = aim_angle -1
 		new_arrow.position = Vector2(0, 96)
 		self.add_child(new_arrow)
 	

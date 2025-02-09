@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var arrow_scene = preload("res://Scenes/arrow.tscn")
 var aim_angle: float = 0
+var arrow_direction = 1
 
 @export var SPEED: float = 100.0
 @export var JUMP_VELOCITY: float = -240.0 / 1.45
@@ -20,7 +21,10 @@ var dash_direction = Vector2(0,0)
 
 func _physics_process(delta: float) -> void:
 
-
+	if Input.get_axis("left", "right") < 0:
+		arrow_direction = -1
+	elif Input.get_axis("left", "right") > 0:
+		arrow_direction = 1
 
 
 	# Check for dash input.
@@ -78,17 +82,22 @@ func _physics_process(delta: float) -> void:
 		shoot(delta, aim_angle)
 		aim_angle = 0
 		$"indication-center".visible = false
-	
-	$"indication-center".rotation_degrees=aim_angle
+	if arrow_direction == 1:
+		$"indication-center".rotation_degrees=aim_angle
+	else:
+		$"indication-center".rotation_degrees=-179 - aim_angle
 	
 	if RespawnHandler.respawning > 0:
 		reset()
 
-	$"indication-center".rotation_degrees = aim_angle
 
 func shoot(delta: float, angle: float) -> void:
 	var new_arrow = arrow_scene.instantiate()
-	new_arrow.angle = angle - 1
+	if arrow_direction == 1:
+		new_arrow.angle = angle - 1
+	else:
+		new_arrow.angle = -180 - angle
+	new_arrow.direction = arrow_direction
 	new_arrow.position = self.global_position
 	self.get_parent().get_node("arrows").add_child(new_arrow)
 
