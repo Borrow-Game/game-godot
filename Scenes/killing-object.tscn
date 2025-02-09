@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn5nvsbru0mdw"]
+
+[ext_resource type="Script" path="res://Scripts/killing_object.gd" id="1_lh7ts"]
+
+[node name="StaticBody2D" type="Area2D"]
+script = ExtResource("1_lh7ts")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2(1.14286, 1)
+polygon = PackedVector2Array(-7, 6, 0, -16, 7, 6)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-8, 6, 0, -16, 8, 6)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
