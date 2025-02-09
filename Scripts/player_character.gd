@@ -52,6 +52,7 @@ func _physics_process(delta: float) -> void:
 		dash_timer -= delta
 		if dash_timer <= 0:
 			dashing = false
+			velocity = Vector2(0, 0)
 		move_and_collide(dash_velocity)
 		return
 
