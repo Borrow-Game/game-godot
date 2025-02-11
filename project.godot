@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BorrowGame"
-run/main_scene="res://Scenes/physics_sample_scene.tscn"
+run/main_scene="res://Scenes/chapter_1_level.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://Scripts/Assets/Textures/icon.svg"
 
