@@ -11,18 +11,12 @@ func respawn() -> void:
 	add_child(instance)
 	instance.playAnimation()
 	wait(0.4, instance)
-	
-	
 
 func wait(seconds: float, instance) -> void:
 	await get_tree().create_timer(seconds).timeout
 	respawning = 2
 	await get_tree().create_timer(0.6).timeout
 	instance.queue_free()
-
-
-	
-	
 
 func _process(delta: float) -> void:
 	if respawning > 0:

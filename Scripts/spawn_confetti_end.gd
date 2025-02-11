@@ -8,6 +8,6 @@ func _on_body_entered(body):
 
 func spawn_confetti():
 	var instance = confetti_scene.instantiate()
-	instance.global_position = Vector2(1568, 32)  # Adjust the position as needed
+	instance.global_position = Vector2(3935, -16)  # Adjust the position as needed
 	# Add to the main scene (not the Area2D)
 	get_tree().current_scene.add_child(instance)
