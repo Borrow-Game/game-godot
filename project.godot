@@ -23,8 +23,8 @@ HapticsHandler="*res://Scripts/Globals/haptics_handler.gd"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/mode=3
 window/stretch/mode="viewport"
 
@@ -113,3 +113,7 @@ down={
 [physics]
 
 2d/default_gravity=410.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/target_block.gd" id="1_po2qh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wb25r"]
-size = Vector2(16, 16)
+size = Vector2(15.99, 15.99)
 
 [sub_resource type="QuadMesh" id="QuadMesh_w5vyp"]
 
