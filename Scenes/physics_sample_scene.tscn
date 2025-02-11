@@ -1,8 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://n8wv5nrlv2ub"]
 
+
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://Scenes/physics_sample_block.tscn" id="1_l1o3p"]
 [ext_resource type="Script" path="res://Scripts/physics_sample_scene.gd" id="1_wtlnw"]
 [ext_resource type="PackedScene" uid="uid://dfj3ask0ne44o" path="res://Scenes/player_character.tscn" id="2_48hqm"]
+[ext_resource type="PackedScene" uid="uid://b7rena42d60wi" path="res://Scenes/player_camera.tscn" id="3_2un3w"]
 [ext_resource type="PackedScene" uid="uid://dcf28kdusjeiu" path="res://Scenes/target_block.tscn" id="3_a2vti"]
 [ext_resource type="PackedScene" uid="uid://ylta7hm7dobh" path="res://Scenes/moving_block.tscn" id="4_3xai4"]
 [ext_resource type="PackedScene" uid="uid://bn5nvsbru0mdw" path="res://Scenes/killing-object.tscn" id="5_erp6k"]
@@ -16,20 +18,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsuop"]
 size = Vector2(7.14285, 0.298494)
 
-[node name="scene" type="Node2D" node_paths=PackedStringArray("Camera")]
+[node name="scene" type="Node2D"]
 script = ExtResource("1_wtlnw")
-Camera = NodePath("player_character/Camera2D")
 
 [node name="player_character" parent="." instance=ExtResource("2_48hqm")]
 
-[node name="Camera2D" type="Camera2D" parent="player_character"]
-position = Vector2(-2, 0)
-limit_left = -30
-limit_top = -300
-limit_right = 1700
-limit_bottom = 175
-position_smoothing_enabled = true
-editor_draw_limits = true
+[node name="Camera2D" parent="player_character" instance=ExtResource("3_2un3w")]
 
 [node name="arrows" type="Node2D" parent="."]
 
