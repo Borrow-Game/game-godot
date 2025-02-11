@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		
 			angle = move_toward(angle, -270, speed * 60 *delta)
 		else:
-			angle = -270
+			angle = 90
 		
 		
 		self.rotation_degrees = angle
