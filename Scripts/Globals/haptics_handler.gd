@@ -10,7 +10,7 @@ var camera
 var rnd = RandomNumberGenerator.new()
 # detects if there is a camera specified
 func _ready() -> void:
-	if self.get_parent().get_node("scene") and self.get_parent().get_node("scene").name == "scene":
+	if self.get_parent().get_node("scene"):
 		camera = self.get_parent().get_node("scene").Camera 
 
 
