@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var startposition = self.position
 @export  var goal_position = Vector2()
-@export var speed = 10
+@export var speed = 40
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("arrow"):
@@ -16,11 +16,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 		
 func _physics_process(delta: float) -> void:
-
-
-		
-	
-	
 	velocity.x = speed
 	
 	if self.position.x >= goal_position.x :
