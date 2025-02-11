@@ -13,7 +13,6 @@ safe_margin = 0.001
 script = ExtResource("1_nvmt7")
 
 [node name="character_texture" type="Sprite2D" parent="."]
-scale = Vector2(1, 1)
 texture = ExtResource("2_jsedg")
 
 [node name="character_collision" type="CollisionShape2D" parent="."]

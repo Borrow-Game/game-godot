@@ -112,7 +112,7 @@ down={
 
 [physics]
 
-2d/default_gravity=410.0
+2d/default_gravity=340.0
 
 [rendering]
 
