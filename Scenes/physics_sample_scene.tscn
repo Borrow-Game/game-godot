@@ -21,7 +21,6 @@ script = ExtResource("1_wtlnw")
 Camera = NodePath("player_character/Camera2D")
 
 [node name="player_character" parent="." instance=ExtResource("2_48hqm")]
-position = Vector2(1408, -33)
 
 [node name="Camera2D" type="Camera2D" parent="player_character"]
 position = Vector2(-2, 0)
@@ -33,7 +32,6 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 
 [node name="arrows" type="Node2D" parent="."]
-position = Vector2(1408, -33)
 
 [node name="spikes" type="Node" parent="."]
 
