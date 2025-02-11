@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b7rena42d60wi"]
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(-2, 0)
+limit_left = -30
+limit_top = -300
+limit_right = 1700
+limit_bottom = 175
+position_smoothing_enabled = true
+editor_draw_limits = true
