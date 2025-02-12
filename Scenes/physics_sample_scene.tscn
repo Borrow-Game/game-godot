@@ -1,5 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://n8wv5nrlv2ub"]
 
+[gd_scene load_steps=14 format=3 uid="uid://n8wv5nrlv2ub"]
 
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://Scenes/physics_sample_block.tscn" id="1_l1o3p"]
 [ext_resource type="Script" path="res://Scripts/physics_sample_scene.gd" id="1_wtlnw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ylta7hm7dobh" path="res://Scenes/moving_block.tscn" id="4_3xai4"]
 [ext_resource type="PackedScene" uid="uid://bn5nvsbru0mdw" path="res://Scenes/killing-object.tscn" id="5_erp6k"]
 [ext_resource type="PackedScene" uid="uid://cti0hhlcss2tr" path="res://Scenes/enemy2d.tscn" id="6_irbd7"]
+[ext_resource type="PackedScene" uid="uid://cf0mk861dg5gm" path="res://area_camera.tscn" id="9_wrqsw"]
 [ext_resource type="Texture2D" uid="uid://dhttn0u733i3n" path="res://Assets/textures/backgrounds/physics_sample_scene/Layer_3.png" id="8_3xbti"]
 [ext_resource type="Texture2D" uid="uid://bpuw2tcdaplkq" path="res://Assets/textures/backgrounds/physics_sample_scene/Layer_2.png" id="9_860t1"]
 [ext_resource type="Texture2D" uid="uid://8i3uphbu25ne" path="res://Assets/textures/backgrounds/physics_sample_scene/Layer_1.png" id="10_jg0nf"]
@@ -18,8 +19,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsuop"]
 size = Vector2(7.14285, 0.298494)
 
-[node name="scene" type="Node2D"]
+
+[node name="scene" type="Node2D" node_paths=PackedStringArray("Camera")]
 script = ExtResource("1_wtlnw")
+Camera = NodePath("player_character/Camera2D")
 
 [node name="player_character" parent="." instance=ExtResource("2_48hqm")]
 
@@ -765,7 +768,7 @@ position = Vector2(1616, 224)
 position = Vector2(1648, 224)
 
 [node name="sample_block210" parent="blocks" instance=ExtResource("1_l1o3p")]
-position = Vector2(1680, 224)
+position = Vector642(1680, 224)
 
 [node name="sample_block211" parent="blocks" instance=ExtResource("1_l1o3p")]
 position = Vector2(1712, 192)
@@ -905,7 +908,7 @@ position = Vector2(1680, -192)
 [node name="sample_block276" parent="blocks" instance=ExtResource("1_l1o3p")]
 position = Vector2(1616, -160)
 
-[node name="sample_block277" parent="blocks" instance=ExtResource("1_l1o3p")]
+[node name="samp64le_block277" parent="blocks" instance=ExtResource("1_l1o3p")]
 position = Vector2(1648, -160)
 
 [node name="sample_block278" parent="blocks" instance=ExtResource("1_l1o3p")]
@@ -977,7 +980,7 @@ position = Vector2(1264, 64)
 [node name="sample_block160" parent="blocks" instance=ExtResource("1_l1o3p")]
 position = Vector2(1392, 64)
 
-[node name="sample_block161" parent="blocks" instance=ExtResource("1_l1o3p")]
+[node name="sam64ple_block161" parent="blocks" instance=ExtResource("1_l1o3p")]
 position = Vector2(1424, 64)
 
 [node name="sample_block162" parent="blocks" instance=ExtResource("1_l1o3p")]
@@ -1055,6 +1058,15 @@ position = Vector2(880, 32)
 scale = Vector2(4, 1)
 aim_position = Vector2(880, 88)
 
+
+[node name="Area2D" parent="." instance=ExtResource("9_wrqsw")]
+position = Vector2(1376, -24)
+scale = Vector2(700, 400)
+
+[node name="Area2D2" parent="." instance=ExtResource("9_wrqsw")]
+position = Vector2(488, -24)
+scale = Vector2(1080, 400)
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -1101,3 +1113,4 @@ position = Vector2(167.858, 2.38805)
 shape = SubResource("RectangleShape2D_bsuop")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+
