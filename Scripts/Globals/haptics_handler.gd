@@ -6,12 +6,11 @@ var shaking = false
 var shake_time = 1
 var shake_strength = 1
 
-var camera
+var camera: Node
+var camera_pos = Vector2(0,0)
 var rnd = RandomNumberGenerator.new()
 # detects if there is a camera specified
-func _ready() -> void:
-	if self.get_parent().get_node("scene") and self.get_parent().get_node("scene").name == "scene":
-		camera = self.get_parent().get_node("scene").Camera 
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
