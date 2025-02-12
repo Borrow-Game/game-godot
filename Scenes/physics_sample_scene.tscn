@@ -1055,7 +1055,6 @@ scale = Vector2(4, 1)
 aim_position = Vector2(880, 88)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(945, -26)
