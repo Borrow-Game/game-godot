@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=14 format=3 uid="uid://n8wv5nrlv2ub"]
+[gd_scene load_steps=16 format=3 uid="uid://n8wv5nrlv2ub"]
 
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://Scenes/physics_sample_block.tscn" id="1_l1o3p"]
 [ext_resource type="Script" path="res://Scripts/physics_sample_scene.gd" id="1_wtlnw"]
@@ -9,16 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://ylta7hm7dobh" path="res://Scenes/moving_block.tscn" id="4_3xai4"]
 [ext_resource type="PackedScene" uid="uid://bn5nvsbru0mdw" path="res://Scenes/killing-object.tscn" id="5_erp6k"]
 [ext_resource type="PackedScene" uid="uid://cti0hhlcss2tr" path="res://Scenes/enemy2d.tscn" id="6_irbd7"]
-[ext_resource type="PackedScene" uid="uid://cf0mk861dg5gm" path="res://area_camera.tscn" id="9_wrqsw"]
 [ext_resource type="Texture2D" uid="uid://dhttn0u733i3n" path="res://Assets/textures/backgrounds/physics_sample_scene/Layer_3.png" id="8_3xbti"]
 [ext_resource type="Texture2D" uid="uid://bpuw2tcdaplkq" path="res://Assets/textures/backgrounds/physics_sample_scene/Layer_2.png" id="9_860t1"]
+[ext_resource type="PackedScene" uid="uid://cf0mk861dg5gm" path="res://area_camera.tscn" id="9_wrqsw"]
 [ext_resource type="Texture2D" uid="uid://8i3uphbu25ne" path="res://Assets/textures/backgrounds/physics_sample_scene/Layer_1.png" id="10_jg0nf"]
 [ext_resource type="Texture2D" uid="uid://bidhnytjulmee" path="res://Assets/textures/backgrounds/physics_sample_scene/Layer_0.png" id="11_efdi7"]
 [ext_resource type="Script" path="res://Scripts/spawn_confetti_end.gd" id="12_rqtcp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsuop"]
 size = Vector2(7.14285, 0.298494)
-
 
 [node name="scene" type="Node2D" node_paths=PackedStringArray("Camera")]
 script = ExtResource("1_wtlnw")
@@ -768,7 +766,7 @@ position = Vector2(1616, 224)
 position = Vector2(1648, 224)
 
 [node name="sample_block210" parent="blocks" instance=ExtResource("1_l1o3p")]
-position = Vector642(1680, 224)
+position = Vector2(1680, 224)
 
 [node name="sample_block211" parent="blocks" instance=ExtResource("1_l1o3p")]
 position = Vector2(1712, 192)
@@ -1058,10 +1056,13 @@ position = Vector2(880, 32)
 scale = Vector2(4, 1)
 aim_position = Vector2(880, 88)
 
-
 [node name="Area2D" parent="." instance=ExtResource("9_wrqsw")]
 position = Vector2(1376, -24)
 scale = Vector2(700, 400)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(167.858, 2.38805)
+shape = SubResource("RectangleShape2D_bsuop")
 
 [node name="Area2D2" parent="." instance=ExtResource("9_wrqsw")]
 position = Vector2(488, -24)
@@ -1103,14 +1104,7 @@ motion_mirroring = Vector2(1440, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("11_efdi7")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D3" type="Area2D" parent="."]
 position = Vector2(64, -2)
 scale = Vector2(8.96, 13.4)
 script = ExtResource("12_rqtcp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(167.858, 2.38805)
-shape = SubResource("RectangleShape2D_bsuop")
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-
