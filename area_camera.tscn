@@ -24,6 +24,6 @@ position_smoothing_enabled = true
 shape = SubResource("RectangleShape2D_pjwwk")
 
 [connection signal="area_entered" from="." to="Camera2D" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="." to="Camera2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="Camera2D" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
