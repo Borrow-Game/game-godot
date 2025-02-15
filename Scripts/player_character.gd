@@ -7,6 +7,7 @@ var arrow_direction = 1
 @export var SPEED: float = 100.0
 @export var JUMP_VELOCITY: float = -240.0 / 1.45
 var x_acceleration: float = 40
+@onready var character_texture: Sprite2D = $character_texture
 
 @onready var startpoint = self.position
 
@@ -22,10 +23,14 @@ var dash_direction = Vector2(0,0)
 func _physics_process(delta: float) -> void:
 	HapticsHandler.camera_pos = self.position
 	print(self.position)
+  
 	if Input.get_axis("left", "right") < 0:
 		arrow_direction = -1
+		character_texture.flip_h = true
+		
 	elif Input.get_axis("left", "right") > 0:
 		arrow_direction = 1
+		character_texture.flip_h = false
 
 
 	# Check for dash input.
