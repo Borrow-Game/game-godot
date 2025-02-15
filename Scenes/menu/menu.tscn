@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bshc7exf28y1v"]
+
+[ext_resource type="PackedScene" path="res://Scenes/player_camera.tscn" id="2_6qcep"]
+[ext_resource type="Texture2D" uid="uid://bdab168djx3vl" path="res://Assets/textures/backgrounds/test/AeaIa8i.jpeg" id="2_c1o1u"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ayv07"]
+load_path = "res://.godot/imported/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png-68aa9697752d31ef0d16966ca17b6438.ctex"
+
+[node name="Menu" type="Node2D"]
+
+[node name="Camera2D" parent="." instance=ExtResource("2_6qcep")]
+position = Vector2(319, 2.88)
+scale = Vector2(4, 4)
+limit_left = -128
+limit_right = 4000
+limit_bottom = 180
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(359, 0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_c1o1u")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 277.0
+offset_top = -9.0
+offset_right = 364.0
+offset_bottom = 17.0
+icon = SubResource("CompressedTexture2D_ayv07")
+icon_alignment = 1
+expand_icon = true
