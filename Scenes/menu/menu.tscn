@@ -1,30 +1,80 @@
-[gd_scene load_steps=4 format=3 uid="uid://bshc7exf28y1v"]
+[gd_scene load_steps=7 format=3 uid="uid://bshc7exf28y1v"]
 
-[ext_resource type="PackedScene" path="res://Scenes/player_camera.tscn" id="2_6qcep"]
-[ext_resource type="Texture2D" uid="uid://bdab168djx3vl" path="res://Assets/textures/backgrounds/test/AeaIa8i.jpeg" id="2_c1o1u"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ayv07"]
-load_path = "res://.godot/imported/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png-68aa9697752d31ef0d16966ca17b6438.ctex"
+[ext_resource type="Texture2D" uid="uid://7k7v056irndl" path="res://Assets/textures/backgrounds/test/AeaIa8i.png" id="2_yfiep"]
+[ext_resource type="Texture2D" uid="uid://e2mv41o0iu5s" path="res://Assets/textures/icons/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="3_388v7"]
+[ext_resource type="FontFile" uid="uid://du2fhx7mqviw1" path="res://Assets/fonts/Minecraft.ttf" id="4_hp511"]
+[ext_resource type="Script" path="res://Scripts/menu/play.gd" id="5_kviva"]
+[ext_resource type="Texture2D" uid="uid://bqlrkbie7qmd" path="res://Assets/textures/icons/question_mark_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="5_vho6q"]
+[ext_resource type="Script" path="res://Scenes/menu/lvl1.gd" id="6_dbqoq"]
 
 [node name="Menu" type="Node2D"]
 
-[node name="Camera2D" parent="." instance=ExtResource("2_6qcep")]
-position = Vector2(319, 2.88)
-scale = Vector2(4, 4)
-limit_left = -128
-limit_right = 4000
-limit_bottom = 180
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(359, 360)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_yfiep")
+
+[node name="start" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="start"]
 position = Vector2(359, 0)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("2_c1o1u")
+texture = ExtResource("2_yfiep")
 
-[node name="Button" type="Button" parent="."]
+[node name="help" type="Button" parent="start"]
 offset_left = 277.0
-offset_top = -9.0
+offset_top = 2.0
 offset_right = 364.0
-offset_bottom = 17.0
-icon = SubResource("CompressedTexture2D_ayv07")
+offset_bottom = 28.0
+icon = ExtResource("5_vho6q")
 icon_alignment = 1
 expand_icon = true
+
+[node name="play" type="Button" parent="start"]
+offset_left = 277.0
+offset_top = -28.0
+offset_right = 364.0
+offset_bottom = -2.0
+icon = ExtResource("3_388v7")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_kviva")
+
+[node name="level_selection" type="Node" parent="."]
+
+[node name="Button" type="Button" parent="level_selection"]
+offset_left = 264.0
+offset_top = 344.0
+offset_right = 289.0
+offset_bottom = 368.0
+theme_override_fonts/font = ExtResource("4_hp511")
+text = "1"
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("6_dbqoq")
+
+[node name="Button2" type="Button" parent="level_selection"]
+offset_left = 304.0
+offset_top = 344.0
+offset_right = 329.0
+offset_bottom = 368.0
+theme_override_fonts/font = ExtResource("4_hp511")
+text = "2"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button3" type="Button" parent="level_selection"]
+offset_left = 344.0
+offset_top = 344.0
+offset_right = 369.0
+offset_bottom = 368.0
+theme_override_fonts/font = ExtResource("4_hp511")
+text = "3"
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="start/play" to="start/play" method="_on_pressed"]
+[connection signal="pressed" from="level_selection/Button" to="level_selection/Button" method="_on_pressed"]

@@ -1,15 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn5nvsbru0mdw"]
+[gd_scene load_steps=3 format=3 uid="uid://bn5nvsbru0mdw"]
 
 [ext_resource type="Script" path="res://Scripts/killing_object.gd" id="1_lh7ts"]
+[ext_resource type="Texture2D" uid="uid://dueigt4abuoay" path="res://Assets/textures/killing-blocks.png" id="2_qigy0"]
 
 [node name="StaticBody2D" type="Area2D"]
 script = ExtResource("1_lh7ts")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-scale = Vector2(1.14286, 1)
-polygon = PackedVector2Array(-7, 6, 0, -10, 7, 6)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-8, 6, 0, -10, 8, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("2_qigy0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

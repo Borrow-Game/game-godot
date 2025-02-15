@@ -22,7 +22,7 @@ var dash_direction = Vector2(0,0)
 
 func _physics_process(delta: float) -> void:
 	HapticsHandler.camera_pos = self.position
-	print(self.position)
+	#print(self.position)
   
 	if Input.get_axis("left", "right") < 0:
 		arrow_direction = -1
@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		if dash_direction == Vector2.ZERO:
 			dash_direction.x = sign(velocity.x) if velocity.x != 0 else 1
 		dash_direction = dash_direction.floor().normalized()
-		print(dash_direction)
+		#print(dash_direction)
 		
 		dash_velocity = dash_direction * DASH_SPEED
 		dashing = true
@@ -124,3 +124,39 @@ func shoot(delta: float, angle: float) -> void:
 func reset() -> void: # gets triggerd if respawn
 	self.position = startpoint
 	self.set_physics_process(true)
+	
+
+# What the sigma is this even???
+
+var pause_menu = null
+var is_paused = false
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):  # Esc key
+		toggle_pause()
+
+func toggle_pause():
+	if is_paused:
+		resume_game()
+	else:
+		pause_game()
+
+func pause_game():
+	print('pause')
+	if pause_menu == null:
+		pause_menu = load("res://Scenes/menu/pause_menu.tscn").instantiate()
+		get_tree().current_scene.add_child(pause_menu)
+
+	is_paused = true
+	#get_tree().paused = true  # Pause game properly
+
+func resume_game():
+	print('resume')
+	if pause_menu:
+		print('resume2')
+		pause_menu.queue_free()
+		await get_tree().process_frame  # Wait for the engine to remove the node
+		pause_menu = null  # Reset reference
+
+	is_paused = false
+	#get_tree().paused = false  # Unpause game

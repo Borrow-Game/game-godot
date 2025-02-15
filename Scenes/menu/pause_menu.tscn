@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://doqeyhkgudnum"]
+
+[ext_resource type="Script" path="res://Scripts/menu/pause_menu.gd" id="1_f3nkv"]
+[ext_resource type="Texture2D" uid="uid://e2mv41o0iu5s" path="res://Assets/textures/icons/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="1_o7606"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6vddg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_4caew"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_f3nkv")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.615686)
+position = Vector2(319.75, 179.75)
+scale = Vector2(640.5, 360.5)
+mesh = SubResource("QuadMesh_6vddg")
+
+[node name="play_mesh" type="MeshInstance2D" parent="."]
+position = Vector2(320, 192)
+scale = Vector2(112.5, 32.5)
+mesh = SubResource("QuadMesh_4caew")
+
+[node name="play" type="Button" parent="play_mesh"]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+offset_left = 280.0
+offset_top = 176.0
+offset_right = 360.0
+offset_bottom = 208.0
+icon = ExtResource("1_o7606")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
