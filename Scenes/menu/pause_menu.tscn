@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://doqeyhkgudnum"]
+[gd_scene load_steps=8 format=3 uid="uid://doqeyhkgudnum"]
 
 [ext_resource type="Script" path="res://Scripts/menu/pause_menu.gd" id="1_f3nkv"]
 [ext_resource type="Texture2D" uid="uid://e2mv41o0iu5s" path="res://Assets/textures/icons/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="1_o7606"]
+[ext_resource type="Script" path="res://Scripts/menu/pause_menu_button.gd" id="3_olj13"]
+[ext_resource type="Texture2D" uid="uid://kobybvybnq1b" path="res://Assets/textures/icons/logout_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="4_xcwip"]
+[ext_resource type="Script" path="res://Scripts/menu/paus_menu_leave.gd" id="5_0f0nu"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_6vddg"]
 
@@ -17,19 +20,48 @@ scale = Vector2(640.5, 360.5)
 mesh = SubResource("QuadMesh_6vddg")
 
 [node name="play_mesh" type="MeshInstance2D" parent="."]
-position = Vector2(320, 192)
+position = Vector2(320, 176)
 scale = Vector2(112.5, 32.5)
 mesh = SubResource("QuadMesh_4caew")
 
 [node name="play" type="Button" parent="play_mesh"]
 modulate = Color(0, 0, 0, 1)
 top_level = true
+anchors_preset = -1
+anchor_left = -0.025
+anchor_right = 0.025
 offset_left = 280.0
-offset_top = 176.0
+offset_top = 160.0
 offset_right = 360.0
-offset_bottom = 208.0
+offset_bottom = 192.0
 icon = ExtResource("1_o7606")
 flat = true
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("3_olj13")
 metadata/_edit_use_anchors_ = true
+
+[node name="exit" type="MeshInstance2D" parent="."]
+position = Vector2(320, 216)
+scale = Vector2(112.5, 32.5)
+mesh = SubResource("QuadMesh_4caew")
+
+[node name="exit" type="Button" parent="exit"]
+modulate = Color(0, 0, 0, 1)
+top_level = true
+anchors_preset = -1
+anchor_left = -0.025
+anchor_right = 0.025
+offset_left = 280.0
+offset_top = 200.0
+offset_right = 360.0
+offset_bottom = 232.0
+icon = ExtResource("4_xcwip")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_0f0nu")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="play_mesh/play" to="play_mesh/play" method="_on_pressed"]
+[connection signal="pressed" from="exit/exit" to="exit/exit" method="_on_pressed"]

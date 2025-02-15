@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bshc7exf28y1v"]
+[gd_scene load_steps=8 format=3 uid="uid://bshc7exf28y1v"]
 
+[ext_resource type="Texture2D" uid="uid://bdrg04epquftp" path="res://Assets/textures/icons/borrow_text_logo.png" id="2_uk3os"]
 [ext_resource type="Texture2D" uid="uid://7k7v056irndl" path="res://Assets/textures/backgrounds/test/AeaIa8i.png" id="2_yfiep"]
 [ext_resource type="Texture2D" uid="uid://e2mv41o0iu5s" path="res://Assets/textures/icons/play_arrow_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png" id="3_388v7"]
 [ext_resource type="FontFile" uid="uid://du2fhx7mqviw1" path="res://Assets/fonts/Minecraft.ttf" id="4_hp511"]
@@ -23,6 +24,11 @@ texture = ExtResource("2_yfiep")
 position = Vector2(359, 0)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_yfiep")
+
+[node name="Sprite2D2" type="Sprite2D" parent="start"]
+position = Vector2(320, -80)
+scale = Vector2(0.442446, 0.442446)
+texture = ExtResource("2_uk3os")
 
 [node name="help" type="Button" parent="start"]
 offset_left = 277.0

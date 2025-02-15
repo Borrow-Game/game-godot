@@ -142,21 +142,24 @@ func toggle_pause():
 		pause_game()
 
 func pause_game():
-	print('pause')
+	print("pause")
 	if pause_menu == null:
 		pause_menu = load("res://Scenes/menu/pause_menu.tscn").instantiate()
 		get_tree().current_scene.add_child(pause_menu)
 
+		# Connect the signal from pause menu
+		pause_menu.connect("resume_requested", Callable(self, "resume_game"))
+
 	is_paused = true
-	#get_tree().paused = true  # Pause game properly
 
 func resume_game():
-	print('resume')
-	if pause_menu:
-		print('resume2')
+	print("resume")
+
+	# Ensure pause_menu exists before trying to remove it
+	if pause_menu and is_instance_valid(pause_menu):  
+		print("resume2")
 		pause_menu.queue_free()
-		await get_tree().process_frame  # Wait for the engine to remove the node
+		await get_tree().process_frame  # Ensure it's fully removed
 		pause_menu = null  # Reset reference
 
 	is_paused = false
-	#get_tree().paused = false  # Unpause game
