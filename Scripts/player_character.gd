@@ -22,15 +22,17 @@ var dash_direction = Vector2(0,0)
 
 func _physics_process(delta: float) -> void:
 	HapticsHandler.camera_pos = self.position
-	print(self.position)
+	
   
 	if Input.get_axis("left", "right") < 0:
 		arrow_direction = -1
 		character_texture.flip_h = true
+		$character_collision.position.x = 2
 		
 	elif Input.get_axis("left", "right") > 0:
 		arrow_direction = 1
 		character_texture.flip_h = false
+		$character_collision.position.x = -2
 
 
 	# Check for dash input.
@@ -53,7 +55,7 @@ func _physics_process(delta: float) -> void:
 		if dash_direction == Vector2.ZERO:
 			dash_direction.x = sign(velocity.x) if velocity.x != 0 else 1
 		dash_direction = dash_direction.floor().normalized()
-		print(dash_direction)
+		
 		
 		dash_velocity = dash_direction * DASH_SPEED
 		dashing = true

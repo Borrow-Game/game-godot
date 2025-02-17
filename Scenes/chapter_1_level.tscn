@@ -3084,6 +3084,7 @@ self_modulate = Color(1, 1, 1, 0.141176)
 position = Vector2(4016, 32)
 
 [node name="sample_block567" parent="blocks" instance=ExtResource("4_qjmwi")]
+visible = false
 modulate = Color(0.0235294, 0.0980392, 0.113725, 0)
 self_modulate = Color(1, 1, 1, 0.141176)
 position = Vector2(4016, 0)

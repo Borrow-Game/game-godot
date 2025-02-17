@@ -11,7 +11,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			Input.start_joy_vibration(0, 0.1, 0.1, 0.2)
 			disable()
 	if body.is_in_group("player"):
-		RespawnHandler.respawn()
+		RespawnHandler.respawn("sped")
 		body.set_physics_process(false)
 
 func _physics_process(delta: float) -> void:

@@ -5,11 +5,11 @@ var confetti_scene = preload('res://Scenes/confetti.tscn')
 func _on_body_entered(body):
 	if body.is_in_group("player"):  # Check if the player entered
 		spawn_confetti()  # Set your confetti position
-	wait(1, body)
+		wait(1, body)
 
 func wait(seconds: float, body) -> void:
 	await get_tree().create_timer(seconds).timeout
-	RespawnHandler.respawn()
+	RespawnHandler.respawn("conf")
 	body.set_physics_process(false)
 
 func spawn_confetti():
