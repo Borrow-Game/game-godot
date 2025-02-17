@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		
 		
 		self.rotation_degrees = angle
-		print(angle)
+	
 	if RespawnHandler.respawning > 0:
 			reset()
 	
