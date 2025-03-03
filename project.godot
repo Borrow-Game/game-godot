@@ -37,6 +37,8 @@ project/assembly_name="BorrowGame"
 arrow="group for all player shot projectiles"
 player=""
 wall=""
+mplatform=""
+cmplatform=""
 
 [input]
 
@@ -112,6 +114,7 @@ down={
 
 [physics]
 
+common/physics_ticks_per_second=120
 2d/default_gravity=340.0
 
 [rendering]

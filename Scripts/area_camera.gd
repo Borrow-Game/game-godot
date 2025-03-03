@@ -5,7 +5,6 @@ func _process(delta: float) -> void:
 	if $Camera2D.is_current():
 		$Camera2D.global_position = HapticsHandler.camera_pos
 		
-		print(HapticsHandler.camera_pos)
 
 
 
@@ -28,6 +27,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		
 		$Camera2D.make_current()
 		HapticsHandler.camera = $Camera2D

@@ -15,7 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if active and direction == 1:
-		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10
+		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60
 		move_and_collide(velocity)
 		if angle < 90 - speed  * 60 * delta:
 		
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		self.rotation = deg_to_rad(angle)
 	
 	if active and direction == -1:
-		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10
+		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60
 		move_and_collide(velocity)
 		if angle > -270 + speed * 60 * delta:
 		
