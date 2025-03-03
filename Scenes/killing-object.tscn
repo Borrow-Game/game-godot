@@ -7,9 +7,10 @@ script = ExtResource("1_lh7ts")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 scale = Vector2(1.14286, 1)
-polygon = PackedVector2Array(-7, 6, 0, -10, 7, 6)
+polygon = PackedVector2Array(-6.99998, 8, 0, -8, 0, -8, 6.99998, 8)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-8, 6, 0, -10, 8, 6)
+scale = Vector2(0.8, 0.8)
+polygon = PackedVector2Array(-8.88889, 8.88889, 0, -8.88889, 8.88889, 8.88889)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

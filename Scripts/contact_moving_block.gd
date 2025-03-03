@@ -5,6 +5,7 @@ extends CharacterBody2D
 var velo = Vector2.ZERO
 @onready var start_position = self.global_position
 
+
 var task = "idle" #idle: nothing to move, moving_to: moving to aim_position
 var deltas_count = 0 #used to determine when th time has passed
 
@@ -39,7 +40,8 @@ func reset() -> void: # gets triggerd if respawn
 func _process(delta: float) -> void:
 	if RespawnHandler.respawning > 0:
 		reset()
-
+		
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
 	velo = Vector2.ZERO
+		

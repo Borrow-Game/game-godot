@@ -3,7 +3,7 @@ extends Node
 var respawning = 0
 var deathScene = preload('res://Scenes/death_scene.tscn')
 func respawn(init: String) -> void:
-	print(init)
+	
 	Input.start_joy_vibration(0, 0.8, 0.8, 0.2)
 	HapticsHandler.shake(0.5, 1)
 	
@@ -25,5 +25,4 @@ func _process(delta: float) -> void:
 
 #respawns can be initiated by calling RespawnHandler.respawn()
 
-func _demo() -> void:
-	print("f")
+	

@@ -9,3 +9,10 @@ func _on_target_block_arrow_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("arrow"):
 		triggered_note.trigger()
 		Input.start_joy_vibration(0, 0.5, 0.5, 0.1)
+		$texture.visible = false
+		$texture_pressed.visible = true
+
+func _process(delta: float) -> void:
+	if RespawnHandler.respawning > 0:
+		$texture.visible = true
+		$texture_pressed.visible = false
