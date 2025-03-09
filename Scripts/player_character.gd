@@ -23,6 +23,7 @@ var dash_timer: float = 0.0
 var dash_available: bool = true
 var dash_velocity: Vector2 = Vector2(0,0)
 var dash_direction = Vector2(0,0)
+var post_dash_velocity = Vector2(0, 0)
 
 func _physics_process(delta: float) -> void:
 
@@ -45,6 +46,7 @@ func _physics_process(delta: float) -> void:
 	# Check for dash input.
 	# (Make sure you have defined "dash" in your Input Map.)
 	if Input.is_action_just_pressed("dash") and dash_available:
+		velocity = Vector2.ZERO
 		floor_buffer = Vector2.ZERO
 		floor_buffer_active = false
 		Input.start_joy_vibration(0, 0.1, 0.1, 0.2)
@@ -61,7 +63,7 @@ func _physics_process(delta: float) -> void:
 		elif dash_direction.y > 0:
 			dash_direction.y = 1
 		# If no directional input, default to the current horizontal facing.
-		if dash_direction == Vector2.ZERO:
+		if dash_direction == Vector2(0, 0):
 			dash_direction.x = sign(velocity.x) if velocity.x != 0 else 1
 		dash_direction = dash_direction.floor().normalized()
 		
@@ -77,25 +79,26 @@ func _physics_process(delta: float) -> void:
 		dash_timer -= delta
 		if dash_timer <= 0:
 			dashing = false
-			velocity = Vector2(0, 0)
-		floor_buffer = Vector2.ZERO
+			print(dash_velocity)
+			if dash_velocity.y > 0:
+				post_dash_velocity = dash_velocity
+				print('howdy hey its hipyo tech')
 		floor_buffer_active = false
 		move_and_collide(dash_velocity)
-		return
-
+	if post_dash_velocity != Vector2(0, 0):
+		post_dash_velocity =  apply_post_dash_velocity(post_dash_velocity, delta)
+		print(post_dash_velocity)
+		print("bob")
+	
 	# Normal movement (only executed if not dashing).
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * delta * GravityHandler.gravity
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		
-		
-		
-		
+		velocity.y = JUMP_VELOCITY * GravityHandler.gravity
 
 	var direction := Input.get_axis("left", "right")
-	if direction:
+	if direction and abs(velocity.x) < SPEED:
 		velocity.x = move_toward(velocity.x, direction * SPEED, (x_acceleration / 2) * 60 * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, x_acceleration * 60 * delta)
@@ -114,9 +117,14 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		dash_available = true
 	
+	
 	# Bow aiming and shooting code (unchanged)
-	if Input.is_action_pressed("shoot bow"):
+	if Input.is_action_pressed("shoot bow") and GravityHandler.gravity == 1:
 		aim_angle = move_toward(aim_angle, -70, 2  * 60 * delta)
+		
+		$"indication-center".visible = true
+	elif Input.is_action_pressed("shoot bow") and GravityHandler.gravity == -1:
+		aim_angle = move_toward(aim_angle, 70, 2  * 60 * delta)
 		
 		$"indication-center".visible = true
 	else:
@@ -136,6 +144,12 @@ func _process(delta: float) -> void:
 	if RespawnHandler.respawning > 0:
 		reset()
 		
+	if GravityHandler.gravity == -1:
+		$character_texture.flip_v = true
+		self.up_direction = Vector2(0, 1)
+	else:
+		$character_texture.flip_v = false
+		self.up_direction = Vector2(0, -1)
 
 
 func shoot(delta: float, angle: float) -> void:
@@ -147,6 +161,7 @@ func shoot(delta: float, angle: float) -> void:
 	new_arrow.direction = arrow_direction
 	new_arrow.position = self.global_position
 	self.get_parent().get_node("arrows").add_child(new_arrow)
+	
 
 	
 func reset() -> void: # gets triggerd if respawn
@@ -154,27 +169,39 @@ func reset() -> void: # gets triggerd if respawn
 	self.set_physics_process(true)
 	floor_buffer = Vector2.ZERO
 	floor_buffer_active = false
+	post_dash_velocity = Vector2.ZERO
 
 
 func _on_area_body_exited(body: Node2D) -> void:
-	if body.is_in_group("mplatform"):
+	if body.is_in_group("mplatform") or body.is_in_group("tramp"):
 
 		floor_buffer_active = true
 		is_on_platform = false
 		floor_buffer = body.velo
 		if Input.is_action_pressed("ui_accept") and floor_buffer.y > 0:
 			floor_buffer.y = 0
-			print("z")
 			velocity.y = JUMP_VELOCITY
 			if floor_buffer.x == 0:
 				floor_buffer_active = false
-		print(floor_buffer)
-		print(velocity)
-		
-		
-		
+
 func _on_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("cmplatform"):
+	if body.is_in_group("cmplatform") or body.is_in_group("tramp"):
 		body.trigger()
+	
+func apply_post_dash_velocity(ve, delt) -> Vector2:
+	var initial_position = position
+	move_and_collide(ve)
+	var displacement = position - initial_position
+	if displacement.y < 0:
+		displacement.y = 0
+	if (ve.x < 0 and displacement.x > 0) or (ve.x > 0 and displacement.x < 0):
+		displacement.x = 0
+	if displacement.x / abs(displacement.x) != ceil(dash_direction.x):
+		print(displacement.x / abs(displacement.x))
+		print(dash_direction.x)
+		displacement.x = 0
+	return displacement
+	
+	
 
 		

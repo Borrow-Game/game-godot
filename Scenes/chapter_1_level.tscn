@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=4 uid="uid://dokm7h1dh5jkl"]
 
-[ext_resource type="Script" path="res://Scenes/chapter_1_level.gd" id="1_p8x3l"]
+[ext_resource type="Script" path="res://Scripts/chapter_1_level.gd" id="1_p8x3l"]
 [ext_resource type="PackedScene" uid="uid://dfj3ask0ne44o" path="res://Scenes/player_character.tscn" id="2_lfv0s"]
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://Scenes/physics_sample_block.tscn" id="4_qjmwi"]
 [ext_resource type="PackedScene" uid="uid://bn5nvsbru0mdw" path="res://Scenes/killing-object.tscn" id="5_6owok"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b0d44uhl3rfau" path="res://Scenes/arrow only block.tscn" id="13_bs6bj"]
 [ext_resource type="Texture2D" uid="uid://broy6tsryqfhj" path="res://Assets/textures/tilemaps/chapter 1/rock.png" id="14_n7q15"]
 [ext_resource type="Texture2D" uid="uid://qeeu351lxhpk" path="res://Assets/textures/tilemaps/chapter 1/grass.png" id="15_7am56"]
-[ext_resource type="PackedScene" uid="uid://cf0mk861dg5gm" path="res://area_camera.tscn" id="15_mxweu"]
+[ext_resource type="PackedScene" uid="uid://cf0mk861dg5gm" path="res://Scenes/area_camera.tscn" id="15_mxweu"]
 [ext_resource type="PackedScene" uid="uid://2ud33y1tr3x0" path="res://Scenes/checkpoint.tscn" id="16_jg34u"]
 [ext_resource type="PackedScene" uid="uid://dcf28kdusjeiu" path="res://Scenes/target_block.tscn" id="17_4q2jh"]
 [ext_resource type="PackedScene" uid="uid://ylta7hm7dobh" path="res://Scenes/moving_block.tscn" id="18_k2txl"]
@@ -277,7 +277,7 @@ sources/2 = SubResource("TileSetAtlasSource_fc0mm")
 script = ExtResource("1_p8x3l")
 
 [node name="player_character" parent="." instance=ExtResource("2_lfv0s")]
-position = Vector2(13848, -448)
+position = Vector2(40, 112)
 
 [node name="blocks" type="Node2D" parent="."]
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BorrowGame"
-run/main_scene="res://Scenes/chapter_1_level.tscn"
+run/main_scene="res://Scenes/chapter_2_level.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://Scripts/Assets/Textures/icon.svg"
 
@@ -20,6 +20,8 @@ config/icon="res://Scripts/Assets/Textures/icon.svg"
 RespawnHandler="*res://Scripts/Globals/respawn_handler.gd"
 WindowHandler="*res://Scripts/Globals/window_handler.gd"
 HapticsHandler="*res://Scripts/Globals/haptics_handler.gd"
+GravityHandler="*res://Scripts/Globals/gravity_handler.gd"
+FlipswitchHandler="*res://Scripts/Globals/flipswitch_handler.gd"
 
 [display]
 
@@ -39,6 +41,8 @@ player=""
 wall=""
 mplatform=""
 cmplatform=""
+tramp=""
+player_center=""
 
 [input]
 

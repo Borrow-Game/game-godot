@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwbenak480tts"]
+
+[ext_resource type="Script" path="res://flipswitch.gd" id="1_mcmwx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdqvn"]
+size = Vector2(16, 16)
+
+[sub_resource type="QuadMesh" id="QuadMesh_fiqyh"]
+
+[node name="flipswitch" type="StaticBody2D" groups=["wall"]]
+script = ExtResource("1_mcmwx")
+type = -1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wdqvn")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.239216, 0.294118, 0.803922, 1)
+self_modulate = Color(0.25, 0.25, 0.25, 1)
+scale = Vector2(16, 16)
+mesh = SubResource("QuadMesh_fiqyh")
+
+[node name="Area2D" type="Area2D" parent="." groups=["wall"]]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1.02, 1.02)
+shape = SubResource("RectangleShape2D_wdqvn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
