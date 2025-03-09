@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3r3fn58tpnqi"]
+
+[ext_resource type="Script" path="res://Scripts/single_bounce_trampoline.gd" id="1_n06qu"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_fhu7u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_robb4"]
+size = Vector2(48, 16)
+
+[node name="single_bounce_trampoline" type="CharacterBody2D" groups=["tramp"]]
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_n06qu")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.133134, 0.112962, 0.114989, 1)
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(48, 16)
+mesh = SubResource("QuadMesh_fhu7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_robb4")

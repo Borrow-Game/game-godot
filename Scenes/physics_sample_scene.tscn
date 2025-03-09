@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ylta7hm7dobh" path="res://Scenes/moving_block.tscn" id="4_3xai4"]
 [ext_resource type="PackedScene" uid="uid://bn5nvsbru0mdw" path="res://Scenes/killing-object.tscn" id="5_erp6k"]
 [ext_resource type="PackedScene" uid="uid://cti0hhlcss2tr" path="res://Scenes/enemy2d.tscn" id="6_irbd7"]
-[ext_resource type="PackedScene" uid="uid://cf0mk861dg5gm" path="res://area_camera.tscn" id="9_wrqsw"]
+[ext_resource type="PackedScene" uid="uid://cf0mk861dg5gm" path="res://Scenes/area_camera.tscn" id="9_wrqsw"]
 [ext_resource type="PackedScene" uid="uid://b83ticae4uy22" path="res://Scenes/parallax_background.tscn" id="11_fv2c8"]
 [ext_resource type="Script" path="res://Scripts/spawn_confetti_end.gd" id="12_rqtcp"]
 

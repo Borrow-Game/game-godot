@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfj3ask0ne44o"]
+[gd_scene load_steps=7 format=3 uid="uid://dfj3ask0ne44o"]
 
 [ext_resource type="Script" path="res://Scripts/player_character.gd" id="1_nvmt7"]
 [ext_resource type="Texture2D" uid="uid://y4muikgkrnia" path="res://Assets/textures/character_static.png" id="2_jsedg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2oq8"]
-size = Vector2(14.014, 29.0834)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc670"]
+size = Vector2(12, 30)
 
 [sub_resource type="SphereMesh" id="SphereMesh_7k7et"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2oq8"]
+size = Vector2(12, 30)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ruo4c"]
 
 [node name="player_character" type="CharacterBody2D" groups=["player"]]
 platform_on_leave = 2
@@ -15,11 +20,11 @@ script = ExtResource("1_nvmt7")
 
 [node name="character_texture" type="Sprite2D" parent="."]
 texture = ExtResource("2_jsedg")
+offset = Vector2(0, -1)
 
 [node name="character_collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.47282)
-scale = Vector2(0.999, 0.999)
-shape = SubResource("RectangleShape2D_n2oq8")
+position = Vector2(0, -2.38419e-07)
+shape = SubResource("RectangleShape2D_yc670")
 
 [node name="indication-center" type="Node2D" parent="."]
 
@@ -31,9 +36,20 @@ mesh = SubResource("SphereMesh_7k7et")
 [node name="area" type="Area2D" parent="."]
 
 [node name="character_collision" type="CollisionShape2D" parent="area"]
-position = Vector2(0, 0.8)
-scale = Vector2(1.1, 1.1)
+scale = Vector2(1.1, 1.03)
 shape = SubResource("RectangleShape2D_n2oq8")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player_center"]]
+collision_layer = 32768
+collision_mask = 32768
+motion_mode = 1
+
+[node name="character_collision" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_n2oq8")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+visible = false
+mesh = SubResource("QuadMesh_ruo4c")
 
 [connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
 [connection signal="body_exited" from="area" to="." method="_on_area_body_exited"]
