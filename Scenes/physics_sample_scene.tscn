@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://n8wv5nrlv2ub"]
 
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://Scenes/physics_sample_block.tscn" id="1_l1o3p"]
-[ext_resource type="Script" path="res://Scripts/physics_sample_scene.gd" id="1_wtlnw"]
+[ext_resource type="Script" uid="uid://dlvrle7tt0an6" path="res://Scripts/physics_sample_scene.gd" id="1_wtlnw"]
 [ext_resource type="PackedScene" uid="uid://dfj3ask0ne44o" path="res://Scenes/player_character.tscn" id="2_48hqm"]
 [ext_resource type="PackedScene" uid="uid://b7rena42d60wi" path="res://Scenes/player_camera.tscn" id="3_2un3w"]
 [ext_resource type="PackedScene" uid="uid://dcf28kdusjeiu" path="res://Scenes/target_block.tscn" id="3_a2vti"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cti0hhlcss2tr" path="res://Scenes/enemy2d.tscn" id="6_irbd7"]
 [ext_resource type="PackedScene" uid="uid://cf0mk861dg5gm" path="res://Scenes/area_camera.tscn" id="9_wrqsw"]
 [ext_resource type="PackedScene" uid="uid://b83ticae4uy22" path="res://Scenes/parallax_background.tscn" id="11_fv2c8"]
-[ext_resource type="Script" path="res://Scripts/spawn_confetti_end.gd" id="12_rqtcp"]
+[ext_resource type="Script" uid="uid://dipouubgxc1hg" path="res://Scripts/spawn_confetti_end.gd" id="12_rqtcp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bsuop"]
 size = Vector2(7.14285, 0.298494)

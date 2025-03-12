@@ -1,15 +1,14 @@
-[gd_scene load_steps=27 format=4 uid="uid://dokm7h1dh5jkl"]
+[gd_scene load_steps=26 format=4 uid="uid://dokm7h1dh5jkl"]
 
-[ext_resource type="Script" path="res://Scripts/chapter_1_level.gd" id="1_p8x3l"]
+[ext_resource type="Script" uid="uid://bnginwm8ty1mw" path="res://Scripts/chapter_1_level.gd" id="1_p8x3l"]
 [ext_resource type="PackedScene" uid="uid://dfj3ask0ne44o" path="res://Scenes/player_character.tscn" id="2_lfv0s"]
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://Scenes/physics_sample_block.tscn" id="4_qjmwi"]
 [ext_resource type="PackedScene" uid="uid://bn5nvsbru0mdw" path="res://Scenes/killing-object.tscn" id="5_6owok"]
 [ext_resource type="PackedScene" uid="uid://rv50fqr2a5lm" path="res://killing-object.tscn" id="6_rgw0q"]
 [ext_resource type="PackedScene" uid="uid://b83ticae4uy22" path="res://Scenes/parallax_background.tscn" id="6_vwycl"]
-[ext_resource type="Script" path="res://Scripts/killing_object.gd" id="7_rwv5w"]
 [ext_resource type="PackedScene" uid="uid://cti0hhlcss2tr" path="res://Scenes/enemy2d.tscn" id="10_c1prn"]
 [ext_resource type="PackedScene" uid="uid://clwkdwgb2j7df" path="res://Scenes/platform.tscn" id="11_8q102"]
-[ext_resource type="Script" path="res://Scripts/spawn_confetti_end.gd" id="12_yxa7f"]
+[ext_resource type="Script" uid="uid://dipouubgxc1hg" path="res://Scripts/spawn_confetti_end.gd" id="12_yxa7f"]
 [ext_resource type="Texture2D" uid="uid://dca1li1edvqko" path="res://Assets/textures/tilemaps/chapter 1/small_objects.png" id="13_84wyy"]
 [ext_resource type="PackedScene" uid="uid://b0d44uhl3rfau" path="res://Scenes/arrow only block.tscn" id="13_bs6bj"]
 [ext_resource type="Texture2D" uid="uid://broy6tsryqfhj" path="res://Assets/textures/tilemaps/chapter 1/rock.png" id="14_n7q15"]
@@ -7883,632 +7882,506 @@ position = Vector2(3800, 138)
 [node name="StaticBody2D83" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6064, -248)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D85" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6080, -248)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D86" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6096, -248)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D87" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6112, -248)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D88" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6488, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D89" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6504, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D90" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6520, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D91" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6536, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D92" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6552, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D93" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6568, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D94" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6584, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D95" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6600, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D96" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6616, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D97" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6632, -168)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D98" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6648, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D99" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6664, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D100" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6680, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D101" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6696, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D102" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6712, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D103" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6728, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D104" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6744, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D105" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6760, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D106" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6776, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D107" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6792, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D108" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6880, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D109" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6896, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D110" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6912, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D111" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6928, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D112" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6944, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D113" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6960, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D114" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6976, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D115" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6992, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D116" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(7008, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D117" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(7024, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D118" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(7040, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D119" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(7056, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D120" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6080, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D121" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6064, -104)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D122" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6096, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D123" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6112, -104)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D124" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6128, -104)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D125" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6144, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D126" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6160, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D127" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6176, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D128" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6192, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D129" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6208, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D130" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6224, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D131" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6240, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D132" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6256, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D133" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6272, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D134" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6288, -136)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D135" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6304, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D136" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6320, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D137" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6336, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D138" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(6352, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D139" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5984, -136)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D140" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5968, -136)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D141" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5952, -144)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D142" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5936, -144)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D143" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5920, -144)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D144" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5904, -144)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D145" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5888, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D146" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5720, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D147" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5704, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D148" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5688, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D149" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5656, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D151" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5640, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D152" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5624, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D153" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5608, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D154" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5592, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D155" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5576, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D156" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5560, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D157" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5544, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D158" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5528, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D159" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5512, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D160" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5496, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D161" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5480, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D162" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5464, -152)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D163" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5448, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D164" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5432, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D165" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5416, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D166" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5400, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D167" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5384, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D168" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5368, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D169" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5352, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D170" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5336, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D171" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5320, -112)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D172" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5304, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D173" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5288, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D174" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5272, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D175" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5256, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D176" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5240, -96)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D177" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5224, -96)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D178" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5208, -96)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D179" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5192, -96)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D180" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5176, -96)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D181" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5160, -104)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D182" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5144, -104)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D183" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5128, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D184" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5112, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D185" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5096, -120)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D186" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5080, -176)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D187" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5064, -176)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D188" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5048, -176)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D189" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5032, -176)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D190" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5016, -184)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D191" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5008, -184)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D192" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4888, -136)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D193" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4872, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D194" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4856, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D195" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4840, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D196" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4824, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D197" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4808, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D198" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4792, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D199" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4776, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D200" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4760, -128)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D201" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4488, 40)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D202" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4472, 40)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D203" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4456, 40)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D204" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4440, 40)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D205" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4424, 40)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D207" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4392, 40)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D208" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4376, 40)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D209" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4360, 40)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D206" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(4408, 40)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D150" parent="spikes" instance=ExtResource("6_rgw0q")]
 modulate = Color(1, 1, 1, 0.184314)
 position = Vector2(5672, -160)
-script = ExtResource("7_rwv5w")
 
 [node name="StaticBody2D210" parent="spikes" instance=ExtResource("5_6owok")]
 position = Vector2(7408, -200)

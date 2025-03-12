@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://rv50fqr2a5lm"]
 
-[ext_resource type="Script" path="res://killing_object.gd" id="1_lh7ts"]
+[ext_resource type="Script" uid="uid://srgoi51ig28y" path="res://Scripts/killing_object.gd" id="1_idsm8"]
 
 [node name="StaticBody2D" type="Area2D"]
-script = ExtResource("1_lh7ts")
+script = ExtResource("1_idsm8")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 scale = Vector2(1.14286, 1)

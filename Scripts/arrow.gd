@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var angle = -1
 @export var direction = 1
 @export var active = true
+@export var slowdown = 1.0
 var speed = 1
 var base = 0
 # Called when the node enters the scene tree for the first time.
@@ -14,44 +15,44 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if active and direction == 1 and GravityHandler.gravity == 1:
-		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60
+		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60 * slowdown
 		move_and_collide(velocity)
 		if angle < 90 - speed  * 60 * delta:
 		
-			angle = move_toward(angle, 90, speed * 60 *delta)
+			angle = move_toward(angle, 90, speed * 60 *delta * slowdown)
 		else:
 			angle = 90
 
 		self.rotation = deg_to_rad(angle)
 	
 	if active and direction == -1 and GravityHandler.gravity == 1:
-		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60
+		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60 * slowdown
 		move_and_collide(velocity)
 		if angle > -270 + speed * 60 * delta:
 		
-			angle = move_toward(angle, -270, speed * 60 *delta)
+			angle = move_toward(angle, -270, speed * 60 *delta * slowdown)
 		else:
 			angle = -270
 		
 		
 		self.rotation_degrees = angle
 	if active and direction == 1 and GravityHandler.gravity == -1:
-		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60
+		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60 * slowdown
 		move_and_collide(velocity)
 		if angle > -90 + speed  * 60 * delta:
 		
-			angle = move_toward(angle, -90, speed * 60 *delta)
+			angle = move_toward(angle, -90, speed * 60 *delta * slowdown)
 		else:
 			angle = -90
 
 		self.rotation = deg_to_rad(angle)
 	
 	if active and direction == -1 and GravityHandler.gravity == -1:
-		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60
+		velocity = Vector2.from_angle(deg_to_rad(angle))  * 10 * delta * 60 * slowdown
 		move_and_collide(velocity)
 		if angle < -90 + speed * 60 * delta:
 		
-			angle = move_toward(angle, -90, speed * 60 *delta)
+			angle = move_toward(angle, -90, speed * 60 *delta * slowdown)
 		else:
 			angle = -90
 		

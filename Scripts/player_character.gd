@@ -8,6 +8,9 @@ var aim_angle: float = 0
 var arrow_direction = 1
 @export var floor_buffer_active = false
 
+@export var fan_boost = Vector2.ZERO
+@export var interacting_fans = 0
+
 @export var SPEED: float = 110.0
 @export var JUMP_VELOCITY: float = -240.0 / 1.45
 var x_acceleration: float = 40
@@ -26,22 +29,21 @@ var dash_direction = Vector2(0,0)
 var post_dash_velocity = Vector2(0, 0)
 
 func _physics_process(delta: float) -> void:
-
-		
+	if interacting_fans == 0:
+		if Input.get_axis("ui_left", "ui_right") < 0.1 and fan_boost.x > 0:
+			fan_boost = Vector2(move_toward(fan_boost.x, 00, 200 * delta), 0)
+		if Input.get_axis("ui_left", "ui_right") > 0.1 and fan_boost.x < 0:
+			fan_boost = Vector2(move_toward(fan_boost.x, 00, 200 * delta), 0)
+	
 	HapticsHandler.camera_pos = self.position
 	
-  
 	if Input.get_axis("left", "right") < 0:
 		arrow_direction = -1
 		character_texture.flip_h = true
 
-		
 	elif Input.get_axis("left", "right") > 0:
 		arrow_direction = 1
 		character_texture.flip_h = false
-	
-	
-	
 
 	# Check for dash input.
 	# (Make sure you have defined "dash" in your Input Map.)
@@ -66,8 +68,7 @@ func _physics_process(delta: float) -> void:
 		if dash_direction == Vector2(0, 0):
 			dash_direction.x = sign(velocity.x) if velocity.x != 0 else 1
 		dash_direction = dash_direction.floor().normalized()
-		
-		
+
 		dash_velocity = dash_direction * DASH_SPEED * 60 * delta
 		dashing = true
 		dash_timer = DASH_DURATION
@@ -79,16 +80,13 @@ func _physics_process(delta: float) -> void:
 		dash_timer -= delta
 		if dash_timer <= 0:
 			dashing = false
-			print(dash_velocity)
 			if dash_velocity.y > 0:
 				post_dash_velocity = dash_velocity
-				print('howdy hey its hipyo tech')
 		floor_buffer_active = false
 		move_and_collide(dash_velocity)
 	if post_dash_velocity != Vector2(0, 0):
 		post_dash_velocity =  apply_post_dash_velocity(post_dash_velocity, delta)
-		print(post_dash_velocity)
-		print("bob")
+
 	
 	# Normal movement (only executed if not dashing).
 	if not is_on_floor():
@@ -116,8 +114,7 @@ func _physics_process(delta: float) -> void:
 		# Reset dash availability when on the ground.
 	if is_on_floor():
 		dash_available = true
-	
-	
+
 	# Bow aiming and shooting code (unchanged)
 	if Input.is_action_pressed("shoot bow") and GravityHandler.gravity == 1:
 		aim_angle = move_toward(aim_angle, -70, 2  * 60 * delta)
@@ -139,6 +136,11 @@ func _physics_process(delta: float) -> void:
 		$"indication-center".rotation_degrees=aim_angle
 	else:
 		$"indication-center".rotation_degrees=-179 - aim_angle
+	
+	var old_pos = self.position
+	move_and_collide(fan_boost * delta)
+	if floor(self.position * 100) == floor(old_pos * 100) and fan_boost != Vector2.ZERO:
+		fan_boost = Vector2.ZERO
 	
 func _process(delta: float) -> void:
 	if RespawnHandler.respawning > 0:
@@ -170,6 +172,7 @@ func reset() -> void: # gets triggerd if respawn
 	floor_buffer = Vector2.ZERO
 	floor_buffer_active = false
 	post_dash_velocity = Vector2.ZERO
+	fan_boost = Vector2.ZERO 
 
 
 func _on_area_body_exited(body: Node2D) -> void:
@@ -197,8 +200,6 @@ func apply_post_dash_velocity(ve, delt) -> Vector2:
 	if (ve.x < 0 and displacement.x > 0) or (ve.x > 0 and displacement.x < 0):
 		displacement.x = 0
 	if displacement.x / abs(displacement.x) != ceil(dash_direction.x):
-		print(displacement.x / abs(displacement.x))
-		print(dash_direction.x)
 		displacement.x = 0
 	return displacement
 	

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwd737eih5kad"]
 
-[ext_resource type="Script" path="res://Scripts/negative_gravity_area.gd" id="1_gipkk"]
+[ext_resource type="Script" uid="uid://bufmoakkd2236" path="res://Scripts/negative_gravity_area.gd" id="1_gipkk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e57du"]
 size = Vector2(16, 16)

@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqm4i0nhaefs5"]
+
+[ext_resource type="Script" uid="uid://4jp0vog1e44g" path="res://node_2d.gd" id="1_7c8lk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnmaj"]
+size = Vector2(32, 16)
+
+[sub_resource type="QuadMesh" id="QuadMesh_xjw7s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7c8lk"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tb1s"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgx6v"]
+size = Vector2(32, 16)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7c8lk"]
+radius = 40.0
+height = 80.0
+
+[node name="advanced_platform" type="Node2D"]
+script = ExtResource("1_7c8lk")
+
+[node name="container" type="Node2D" parent="."]
+
+[node name="sample_block" type="CharacterBody2D" parent="container" groups=["wall"]]
+modulate = Color(0.0235294, 0.0980392, 0.113725, 1)
+position = Vector2(0, -40)
+collision_layer = 64
+collision_mask = 64
+
+[node name="sample_block_hitbox" type="CollisionShape2D" parent="container/sample_block"]
+shape = SubResource("RectangleShape2D_dnmaj")
+
+[node name="sample_block_texture" type="MeshInstance2D" parent="container/sample_block"]
+position = Vector2(-4.76837e-07, -9.53674e-07)
+scale = Vector2(32, 16)
+mesh = SubResource("QuadMesh_xjw7s")
+
+[node name="sample_block2" type="CharacterBody2D" parent="container" groups=["wall"]]
+modulate = Color(0.0235294, 0.0980392, 0.113725, 1)
+position = Vector2(-40, 0)
+collision_layer = 64
+collision_mask = 64
+
+[node name="sample_block_hitbox" type="CollisionShape2D" parent="container/sample_block2"]
+shape = SubResource("RectangleShape2D_7c8lk")
+
+[node name="sample_block_texture" type="MeshInstance2D" parent="container/sample_block2"]
+position = Vector2(-4.76837e-07, 2.38419e-07)
+scale = Vector2(32, 16)
+mesh = SubResource("QuadMesh_xjw7s")
+
+[node name="sample_block3" type="CharacterBody2D" parent="container" groups=["wall"]]
+modulate = Color(0.0235294, 0.0980392, 0.113725, 1)
+position = Vector2(40, 0)
+collision_layer = 64
+collision_mask = 64
+
+[node name="sample_block_hitbox" type="CollisionShape2D" parent="container/sample_block3"]
+shape = SubResource("RectangleShape2D_7tb1s")
+
+[node name="sample_block_texture" type="MeshInstance2D" parent="container/sample_block3"]
+position = Vector2(-4.76837e-07, 2.38419e-07)
+scale = Vector2(32, 16)
+mesh = SubResource("QuadMesh_xjw7s")
+
+[node name="sample_block4" type="CharacterBody2D" parent="container" groups=["wall"]]
+modulate = Color(0.0235294, 0.0980392, 0.113725, 1)
+position = Vector2(0, 40)
+collision_layer = 64
+collision_mask = 64
+
+[node name="sample_block_hitbox" type="CollisionShape2D" parent="container/sample_block4"]
+shape = SubResource("RectangleShape2D_sgx6v")
+
+[node name="sample_block_texture" type="MeshInstance2D" parent="container/sample_block4"]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(32, 16)
+mesh = SubResource("QuadMesh_xjw7s")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(1, 1, 1, 0.14902)
+z_index = -1
+mesh = SubResource("SphereMesh_7c8lk")

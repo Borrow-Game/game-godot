@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwbenak480tts"]
 
-[ext_resource type="Script" path="res://flipswitch.gd" id="1_mcmwx"]
+[ext_resource type="Script" uid="uid://dn8nqk47rw6js" path="res://flipswitch.gd" id="1_mcmwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wdqvn"]
 size = Vector2(16, 16)

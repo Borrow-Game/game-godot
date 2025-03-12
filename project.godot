@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="BorrowGame"
-run/main_scene="res://Scenes/chapter_2_level.tscn"
-config/features=PackedStringArray("4.3")
+run/main_scene="uid://crytnp4l2yd7e"
+config/features=PackedStringArray("4.4")
 config/icon="res://Scripts/Assets/Textures/icon.svg"
 
 [autoload]
@@ -27,7 +27,6 @@ FlipswitchHandler="*res://Scripts/Globals/flipswitch_handler.gd"
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [dotnet]

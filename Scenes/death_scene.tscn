@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c113gw0kq1fly"]
 
-[ext_resource type="Script" path="res://Scripts/death_scene.gd" id="1_hqcgq"]
+[ext_resource type="Script" uid="uid://oxe36a4hot7q" path="res://Scripts/death_scene.gd" id="1_hqcgq"]
 
 [sub_resource type="Animation" id="Animation_lv50j"]
 length = 0.001
@@ -34,8 +34,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7avod"]
 _data = {
-"RESET": SubResource("Animation_lv50j"),
-"death": SubResource("Animation_wwr4q")
+&"RESET": SubResource("Animation_lv50j"),
+&"death": SubResource("Animation_wwr4q")
 }
 
 [sub_resource type="PrismMesh" id="PrismMesh_0srsf"]
@@ -50,7 +50,7 @@ script = ExtResource("1_hqcgq")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_7avod")
+&"": SubResource("AnimationLibrary_7avod")
 }
 
 [node name="Node2D" type="Node2D" parent="CanvasLayer/AnimationPlayer"]
