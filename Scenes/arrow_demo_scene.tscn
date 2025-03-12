@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhdknu3qv53tn"]
 
-[ext_resource type="Script" path="res://Scripts/arrow_demo_scene.gd" id="1_7dwqc"]
+[ext_resource type="Script" uid="uid://cd52bpv1ok6wq" path="res://Scripts/arrow_demo_scene.gd" id="1_7dwqc"]
 [ext_resource type="PackedScene" uid="uid://de3gxee2bnp55" path="res://Scenes/arrow.tscn" id="2_l3yrd"]
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://Scenes/physics_sample_block.tscn" id="3_y6d01"]
 
