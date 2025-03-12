@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://4mqe37rihlgq"]
+
+[ext_resource type="PackedScene" uid="uid://bhv3fnjbllcld" path="res://Scenes/audio_player.tscn" id="1_t0xn5"]
+[ext_resource type="AudioStream" uid="uid://b4u4crk37ils5" path="res://Assets/Sounds/music/chapter 3/normal_intro.wav" id="2_nqcbu"]
+[ext_resource type="AudioStream" uid="uid://o8og7f14ppph" path="res://Assets/Sounds/music/chapter 3/normal_loopable.wav" id="3_ual3u"]
+
+[node name="audio_controller" type="Node2D"]
+
+[node name="chapter_3_normal" parent="." instance=ExtResource("1_t0xn5")]
+intro = ExtResource("2_nqcbu")
+loop = ExtResource("3_ual3u")

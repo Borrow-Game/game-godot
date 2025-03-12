@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://crytnp4l2yd7e"]
+[gd_scene load_steps=11 format=3 uid="uid://crytnp4l2yd7e"]
 
 [ext_resource type="PackedScene" uid="uid://lb07788bxve4" path="res://Scenes/physics_sample_block.tscn" id="1_oo10r"]
+[ext_resource type="Script" uid="uid://c2jn06fa23oja" path="res://Scripts/chapter_3_level.gd" id="1_ws5pw"]
 [ext_resource type="PackedScene" uid="uid://dnucmciqx63qx" path="res://Scenes/slow_down_area.tscn" id="2_xitda"]
 [ext_resource type="PackedScene" uid="uid://dfj3ask0ne44o" path="res://Scenes/player_character.tscn" id="3_lyj1r"]
 [ext_resource type="PackedScene" uid="uid://cqm4i0nhaefs5" path="res://Scenes/advanced_p_type_1.tscn" id="4_xitda"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b3r3fn58tpnqi" path="res://Scenes/single_bounce_trampoline.tscn" id="9_q14fu"]
 
 [node name="scene" type="Node2D"]
+script = ExtResource("1_ws5pw")
 
 [node name="arrows" type="Node2D" parent="."]
 

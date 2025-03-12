@@ -22,6 +22,7 @@ WindowHandler="*res://Scripts/Globals/window_handler.gd"
 HapticsHandler="*res://Scripts/Globals/haptics_handler.gd"
 GravityHandler="*res://Scripts/Globals/gravity_handler.gd"
 FlipswitchHandler="*res://Scripts/Globals/flipswitch_handler.gd"
+AudioHandler="*res://Scripts/Globals/audio_handler.gd"
 
 [display]
 

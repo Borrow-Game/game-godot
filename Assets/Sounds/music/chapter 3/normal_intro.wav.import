@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4u4crk37ils5"
+path="res://.godot/imported/normal_intro.wav-02f2baa2dcb14a5c5e85745f6bbb39ef.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/music/chapter 3/normal_intro.wav"
+dest_files=["res://.godot/imported/normal_intro.wav-02f2baa2dcb14a5c5e85745f6bbb39ef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
