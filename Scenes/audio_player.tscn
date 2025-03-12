@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhv3fnjbllcld"]
+
+[ext_resource type="Script" uid="uid://cmw4ulj3it2p7" path="res://Scripts/audio_player.gd" id="1_6suua"]
+[ext_resource type="AudioStream" uid="uid://b4u4crk37ils5" path="res://Assets/Sounds/music/chapter 3/normal_intro.wav" id="1_30owj"]
+[ext_resource type="AudioStream" uid="uid://o8og7f14ppph" path="res://Assets/Sounds/music/chapter 3/normal_loopable.wav" id="3_u4osw"]
+
+[node name="audio_player" type="Node2D"]
+script = ExtResource("1_6suua")
+
+[node name="intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_30owj")
+
+[node name="loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u4osw")
+
+[connection signal="finished" from="intro" to="." method="_on_intro_finished"]
